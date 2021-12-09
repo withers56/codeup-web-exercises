@@ -28,11 +28,33 @@
 // ++ increment
 // -- decrement
 // typeof
-let num1 = 22;
-console.log(num1++); // post-increment
+// let num1 = 22;
+// console.log(num1++); // post-increment
 // num1 original is output to the console, then incremented
-console.log(num1);
-console.log(++num1); // pre-increment
+// console.log(num1);
+// console.log(++num1); // pre-increment
 
 // num1 = num1 +1;
 // num1 += 1;
+
+// let numStr = "7.99"; // string
+// let discount = .10; // number
+
+// let numAmount = parseFloat(numStr);
+// let discountedAmount = numAmount - (numAmount * discount)
+
+// console.log(parseFloat(discountedAmount.toFixed(2)));
+
+let userAge = "32"
+let hopefullyANumber = parseInt(userAge);
+
+//NaN is a falsey. certain values are iherintly false. NaN, null, undefined
+//0, -0, ""
+
+if(hopefullyANumber){
+    console.log("your age is: " + userAge);
+}else{
+    console.log("that was not a valid age. try agaain dawg");
+}
+
+console.log();

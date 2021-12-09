@@ -80,6 +80,7 @@ var sample = "Hello Codeup";
 
 console.log(sample.length);
 console.log(sample.toLowerCase());
+console.log(sample.toUpperCase());
 console.log(sample.concat(" Students."));
 console.log(sample.concat(" Class"));
 console.log(sample.indexOf("c"));
@@ -191,9 +192,22 @@ else
 
 
 
-if((booleanVarInclude && booleanVarLength && booleanVarWhiteSpace && booleanPassLength
-) == true)
+if((booleanVarInclude && booleanVarLength && booleanVarWhiteSpace &&
+    booleanPassLength) == true)
 {
-    console.log("your all set");
+     console.log("you're all set");
 }
-else console.log("somethings wrong");
+else console.log("something is wrong");
+
+
+
+////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
