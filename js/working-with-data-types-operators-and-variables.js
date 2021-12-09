@@ -97,6 +97,103 @@ var facebookPay = 350;
 
 console.log("Your total pay is: " + ((googlePay*6) + (amazonPay*4) + (facebookPay*10)));
 
+//A student can be enrolled in a class only if the class is not full and the
+//class schedule does not conflict with her current schedule.
+
+let classCapacity = 11;
+let classMaxCapacity = 25;
+let scheduleConflict = false;
+
+if ((classCapacity < classMaxCapacity) && (scheduleConflict == false))
+{
+    console.log("gtg");
+}
+    else console.log("not gtg");
+
+///////////////////////////////////////////////////////////////////////////
+
+//A product offer can be applied only if a person buys more than 2 items, and
+// the offer has not expired. Premium members do not need to buy a
+// specific amount of products.
+
+let offerExpire = true;
+let itemAmount = 3;
+let premiumMemberStatus = false;
+
+if ((premiumMemberStatus == true) && (offerExpire == false))
+{
+    console.log("Customer will recieve a discount.")
+}
+    else if ((itemAmount > 2) && (offerExpire == false))
+{
+    console.log("Customer will recieve a discount.");
+}
+    else console.log("No discount available");
+
+
+// Create a variable that holds a boolean value for each of the following
+// conditions:
+
+// the password must be at least 5 characters
+// the password must not include the username
+// the username must be no more than 20 characters
+// neither the username or password can start or end with whitespace
+
 var username = 'codeup';
 var password = 'notastrongpassword';
+var booleanPassLength;
+var booleanVarInclude;
+var booleanVarLength;
+var booleanVarWhiteSpace;
 
+if ((password.length +1) >= 5)
+{
+    booleanPassLength = true;
+    console.log("Password is long enough.")
+}
+    else {
+    console.log("Password isnt long enough")
+        booleanPassLength = false;
+}
+
+    if ((password.includes(username))== true)
+    {
+        booleanVarInclude =  false;
+        console.log("username in password")
+    }
+    else {
+        booleanVarInclude = true;
+        console.log("username not in pass")
+    }
+
+if ((username.length + 1) > 20)
+{
+    console.log("username too long");
+    booleanVarLength = false;
+}
+else
+{
+    console.log("good username");
+    booleanVarLength = true;
+}
+
+if ((username.includes(" ")) || (password.includes(" ")))
+{
+    console.log("username of password has whitespace");
+    booleanVarWhiteSpace = false;
+}
+else
+{
+    console.log("all good");
+    booleanVarWhiteSpace = true;
+}
+
+
+
+
+if((booleanVarInclude && booleanVarLength && booleanVarWhiteSpace && booleanPassLength
+) == true)
+{
+    console.log("your all set");
+}
+else console.log("somethings wrong");
