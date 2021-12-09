@@ -24,3 +24,30 @@ console.log("\t\t         .,\n" +
     "\t\t ,-._.,--'_ `.   _.,-`\n" +
     "\t\t `\"' ___.,'` j,-'\n" +
     "\t\t   `-.__.,--'")
+
+//string1 = string1.toUpperCase();//returns a new string, upper-cased,donest alter string1 value
+//console.log(string1);
+
+//let subPhrase = string1.substr(15, 20);
+
+//console.log('_' + subPhrase.charAt(subPhrase.length - 1) + '_');
+
+let greeting = "Hello, ";
+
+console.log(greeting);
+
+greeting += "Willard";// new string "Hello, Willard"
+
+console.log(greeting);
+
+greeting += "...";// new string "Hello, Willard..."
+
+console.log(greeting);
+
+let num1 = 12; // number
+let numStr = "jim-bob"; // string
+let myBoo = true;
+
+numStr += myBoo;
+
+console.log(numStr);
