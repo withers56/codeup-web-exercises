@@ -83,20 +83,24 @@ console.log(sample.toLowerCase());
 console.log(sample.toUpperCase());
 console.log(sample.concat(" Students."));
 console.log(sample.concat(" Class"));
-console.log(sample.indexOf("c"));
+console.log(sample.indexOf("c"));// -1, there is no lowercase c. could negate
+//by chaning it all to lowercase before running indexOf.
 console.log(sample.indexOf("C"));
 console.log(sample.substr(6,11));
 
 var movieCount = 3;
 var daysRented = 9;
 
-console.log("Your total is " + (movieCount*daysRented));
+console.log("Your total is: $" + (movieCount*daysRented));
 
-var googlePay = 400;
-var amazonPay = 380;
-var facebookPay = 350;
+let googlePay = 400;
+let amazonPay = 380;
+let facebookPay = 350;
 
-console.log("Your total pay is: " + ((googlePay*6) + (amazonPay*4) + (facebookPay*10)));
+
+console.log("Your total pay from google is: $" + ((googlePay*6) +
+    "\nYour total pay from amazon is: $" + (amazonPay*4) + "\nYour total pay from facebook is: $" +(facebookPay*10)));
+console.log("All together the total is: $" + ((googlePay*6) + (amazonPay*4) + (facebookPay*10)));
 
 //A student can be enrolled in a class only if the class is not full and the
 //class schedule does not conflict with her current schedule.
@@ -107,9 +111,9 @@ let scheduleConflict = false;
 
 if ((classCapacity < classMaxCapacity) && (scheduleConflict == false))
 {
-    console.log("gtg");
+    console.log("The student is cleared for class.");
 }
-    else console.log("not gtg");
+    else console.log("The student is not cleared for class.");
 
 ///////////////////////////////////////////////////////////////////////////
 
@@ -150,42 +154,42 @@ var booleanVarWhiteSpace;
 if ((password.length +1) >= 5)
 {
     booleanPassLength = true;
-    console.log("Password is long enough.")
+    console.log("Success")
 }
     else {
-    console.log("Password isnt long enough")
+    console.log("The password is not atleast 5 characters.")
         booleanPassLength = false;
 }
 
     if ((password.includes(username))== true)
     {
         booleanVarInclude =  false;
-        console.log("username in password")
+        console.log("The username cannot be in the password")
     }
     else {
         booleanVarInclude = true;
-        console.log("username not in pass")
+        console.log("Success")
     }
 
 if ((username.length + 1) > 20)
 {
-    console.log("username too long");
+    console.log("The username must be less than 20 characters.");
     booleanVarLength = false;
 }
 else
 {
-    console.log("good username");
+    console.log("Success");
     booleanVarLength = true;
 }
 
 if ((username.includes(" ")) || (password.includes(" ")))
 {
-    console.log("username of password has whitespace");
+    console.log("The username or password cannot contain whitespace");
     booleanVarWhiteSpace = false;
 }
 else
 {
-    console.log("all good");
+    console.log("Success");
     booleanVarWhiteSpace = true;
 }
 
@@ -195,9 +199,9 @@ else
 if((booleanVarInclude && booleanVarLength && booleanVarWhiteSpace &&
     booleanPassLength) == true)
 {
-     console.log("you're all set");
+     console.log("You're all set");
 }
-else console.log("something is wrong");
+else console.log("something is wrong yo");
 
 
 
