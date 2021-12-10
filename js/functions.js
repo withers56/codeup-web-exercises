@@ -9,12 +9,11 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 
-function sayHello(name){
-     console.log("Hello! " + name);
-
+function sayHello(name) {
+    return "Hello " + name;
 }
 
-sayHello("William");
+console.log(sayHello("William"));
 
 /**
  * TODO:
@@ -38,7 +37,7 @@ console.log(helloMessage);
 
 let myName = "William"
 
-sayHello(myName);
+console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -86,7 +85,7 @@ function calculateTip(tipAmount, billAmount){
     return (billAmount * tipAmount);
 }
 
-console.log(calculateTip(.20, 74.84));
+console.log(parseFloat(calculateTip(.20, 74.84).toFixed(2)));
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
@@ -94,13 +93,13 @@ console.log(calculateTip(.20, 74.84));
  * then display the dollar amount they should tip
  */
 
-let billAmount = prompt("What was the bill amount?");
-let tipPercentage = prompt("How much would you like to tip?");
+let billAmount = prompt("How much was the bill?");
+let tipPercentage = prompt("What percentage would you like to tip?");
 
 billAmount = parseFloat(billAmount);
-tipPercentage = (parseFloat(tipPercentage) / 100);
+tipPercentage = parseFloat((tipPercentage) / 100);
 
-alert("Your tip will be: $" + calculateTip(tipPercentage, billAmount));
+alert("Your tip will be: $" + parseFloat((calculateTip(tipPercentage, billAmount).toFixed(2))));
 
 
 
@@ -121,8 +120,18 @@ alert("Your tip will be: $" + calculateTip(tipPercentage, billAmount));
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
-function applyDiscount(retailPrice, discount){
-    return (retailPrice - (retailPrice * discount));
+function applyDiscount(retailPrice, discount) {
+
+    return (retailPrice - (retailPrice * (discount / 100)));
 }
 
-console.log(applyDiscount(45.99, .12));
+let price = parseFloat(prompt("What was the price? "));
+let discount = parseInt(prompt("What was the discount percentage? (0% - 100%)"));
+console.log("The discounted price is: $" + applyDiscount(price, discount).toFixed(2));
+
+let newPrice = applyDiscount(price, discount);
+
+alert("The discounted price is: $" + (newPrice).toFixed(2));
+
+//Math.round(num * 100) / 100
+

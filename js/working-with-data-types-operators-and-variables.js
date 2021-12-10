@@ -198,7 +198,11 @@ if ((booleanVarInclude && booleanVarLength && booleanVarWhiteSpace &&
 
 
 
+let testNum = 12.53534;
 
+console.log(testNum.toFixed(2));
+
+typeof console.log();
 
 
 
