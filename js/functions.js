@@ -1,5 +1,9 @@
 "use strict";
 
+(function () {
+    var iffeVar = "I'm local to the IIFE.";
+
+
 /**
  * TODO:
  * Create a function called 'sayHello' that takes a parameter 'name'.
@@ -134,4 +138,6 @@ let newPrice = applyDiscount(price, discount);
 alert("The discounted price is: $" + (newPrice).toFixed(2));
 
 //Math.round(num * 100) / 100
+///////////////////////////////////////////////////////////////////////////
 
+})();

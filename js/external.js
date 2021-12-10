@@ -1,5 +1,11 @@
 "use strict";
 
+// define a function and immediately invoke (i.e. call) it
+(function () {
+    var iffeVar = "I'm local to the IIFE.";
+////////////////////////////////////////////////////////////////////
+
+
 console.log("Hello from external javascipt");
 
 let myAge = 24;// without strict wouldn't need use strict.
@@ -81,4 +87,4 @@ else if ((itemAmount > 2) && (offerExpire == false))
 }
 else alert("No discount available");
 
-
+})();

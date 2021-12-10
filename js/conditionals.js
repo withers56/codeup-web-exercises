@@ -1,6 +1,8 @@
 "use strict";
-console.log("test");
-/* ########################################################################## */
+
+(function () {
+    var iffeVar = "I'm local to the IIFE.";
+
 
 /**
  * TODO:
@@ -22,6 +24,37 @@ console.log("test");
  * console.logging the function's return value
  */
 
+function analyzeColor(color) {
+
+    color = color.toLowerCase();
+
+    if (color == "blue") {
+        alert("Blue is the color of the ocean!");
+        console.log("Blue is the color of the ocean!");
+    } else if (color == "red") {
+        alert("Red is the color of jad");
+        console.log("Red is the color of jad");
+    } else if (color == "yellow"){
+        alert("Yellow is the color of a sunflower");
+        console.log("Yellow is the color of a sunflower");
+    } else if (color == "green"){
+        alert("Green is the color of the grass");
+        console.log("Green is the color of the grass");
+    } else {
+        console.log("I dont know anything about " + color);
+        alert("I dont know anything about " + color);
+    }
+}
+//
+// let favColor = prompt("What is your favorite color?");
+//
+// analyzeColor(favColor);
+
+
+
+
+
+
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
@@ -35,10 +68,32 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
+//analyzeColor(randomColor);
+//alert(analyzeColor(randomColor));
+
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
+
+switch(randomColor){
+
+    case "red" :
+        alert("Jad is also the color red.");
+        break;
+    case "blue" :
+        alert("Blue is the color of the ocean");
+        break;
+    case "green" :
+        alert("Green is the color of the grass");
+        break;
+    case "yellow" :
+        alert("Yellow is the color of a sunflower");
+        break;
+    default :
+        alert("I dont know what " + randomColor + " is.");
+        break;
+}
 
 /**
  * TODO:
@@ -46,6 +101,11 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+let yourFavColor = prompt("What is your favorite color?");
+
+analyzeColor(yourFavColor);
+
 
 /* ########################################################################## */
 
@@ -98,3 +158,13 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+
+
+
+
+
+
+
+
+})();

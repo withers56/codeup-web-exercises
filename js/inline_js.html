@@ -9,8 +9,100 @@
     "use strict";
 
     console.log("Hello from inline java script!");
+///////////////////////////////////////////////////////////////////////////
+
+    // define a function and immediately invoke (i.e. call) it
+    (function () {
+        var iffeVar = "I'm local to the IIFE.";
 
 
+    alert(iffeVar); // undefined
+
+
+
+
+
+
+    //function name(){};// keyword, function name, parameters, body
+
+
+
+    function wakeUp(){
+        console.log("William waking up....")
+    }
+
+    function getCoffee(){
+        console.log("Turn on coffee machine");
+        console.log("Press button");
+        console.log("Pick up your mug");
+    }
+
+    // Invoking or calling a function
+    // getCoffee();// functions load before script starts
+
+    // Parameters && Arguments
+
+    // function cubed(x) { // x is the parameter
+    //     return x * x * x;
+    // }
+    //
+    // console.log(cubed(8));// Number 8 is the argument.
+    //
+    // let eightToTheThird = cubed(8);
+    //
+    // console.log(eightToTheThird);
+    //
+    // let increment = function(x) {   // cannot invoke it above this point
+    //     return x + 1;
+    // };
+    //
+    // let two = increment(1);
+
+    // var and let scope differently
+
+    function someScopeStuff() { // var gets hoisted to the top
+        var one = 1;            // let can only stay within its curly braces
+        console.log(one);       // let can be used in the sub curly bracws
+        if (true) {
+            let two = 2;
+        }
+        console.log(two);
+    }
+
+    // function  moreScope() {
+    //     console.log(casey)
+    //     let casey = 'casey' // let will crash, var will be undefined in first log
+    //     console.log(casey)
+    // }
+
+    //someScopeStuff();
+    // moreScope()
+
+    function average(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        console.log(sum);
+    }
+
+    average([1, 2]);
+
+        // define a function and immediately invoke (i.e. call) it
+        // (function () {
+        //     var iffeVar = "I'm local to the IIFE.";
+        // })();
+        //
+        // alert(iffeVar); // undefined
+
+
+
+
+
+
+
+
+    })();
 </script>
 
 </body>
