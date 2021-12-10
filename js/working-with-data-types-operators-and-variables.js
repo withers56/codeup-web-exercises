@@ -81,14 +81,15 @@ var sample = "Hello Codeup";
 console.log(sample.length);
 console.log(sample.toLowerCase());
 console.log(sample.toUpperCase());
-console.log(sample.concat(" Students."));
-console.log(sample.concat(" Class"));
+sample = sample.concat(" Students.");
+console.log(sample);
+console.log(sample.replace(" Students.", " Class."));// could use .replace if was stored in variable.
 console.log(sample.indexOf("c"));// -1, there is no lowercase c. could negate
 //by chaning it all to lowercase before running indexOf.
 console.log(sample.indexOf("C"));
-console.log(sample.substr(sample.indexOf("C"),6));
+console.log(sample.substring(sample.indexOf("C"),12));
 
-console.log(sample.match(/Codeup/cd ));
+console.log(sample.match(/Codeup/ ));
 
 var movieCount = 3;
 var daysRented = 9;
@@ -100,9 +101,10 @@ let amazonPay = 380;
 let facebookPay = 350;
 
 
-console.log("Your total pay from google is: $" + ((googlePay*6) +
-    "\nYour total pay from amazon is: $" + (amazonPay*4) + "\nYour total pay from facebook is: $" +(facebookPay*10)));
-console.log("All together the total is: $" + ((googlePay*6) + (amazonPay*4) + (facebookPay*10)));
+console.log("Your total pay from google is: $" + googlePay * 6);
+console.log("Your total pay from amazon is: $" + amazonPay * 4);
+console.log("Your total pay from facebook is: $" + facebookPay * 10);
+console.log("All together the total is: $" + (googlePay * 6 + amazonPay * 4 + facebookPay * 10));
 
 //A student can be enrolled in a class only if the class is not full and the
 //class schedule does not conflict with her current schedule.
@@ -111,7 +113,7 @@ let classCapacity = 11;
 let classMaxCapacity = 25;
 let scheduleConflict = false;
 
-if ((classCapacity < classMaxCapacity) && (scheduleConflict == false))
+if ((classCapacity < classMaxCapacity) && (scheduleConflict = false))
 {
     console.log("The student is cleared for class.");
 }
@@ -123,9 +125,9 @@ if ((classCapacity < classMaxCapacity) && (scheduleConflict == false))
 // the offer has not expired. Premium members do not need to buy a
 // specific amount of products.
 
-let offerExpire = true;
-let itemAmount = 3;
-let premiumMemberStatus = false;
+let offerExpire = false;
+let itemAmount = 1;
+let premiumMemberStatus = true;
 
 if ((premiumMemberStatus == true) && (offerExpire == false))
 {
@@ -153,57 +155,42 @@ var booleanVarInclude;
 var booleanVarLength;
 var booleanVarWhiteSpace;
 
-if ((password.length +1) >= 5)
-{
+if ((password.length + 1) >= 5) {
     booleanPassLength = true;
     console.log("Success")
-}
-    else {
+} else {
     console.log("The password is not atleast 5 characters.")
-        booleanPassLength = false;
+    booleanPassLength = false;
 }
 
-    if ((password.includes(username))== true)
-    {
-        booleanVarInclude =  false;
-        console.log("The username cannot be in the password")
-    }
-    else {
-        booleanVarInclude = true;
-        console.log("Success")
-    }
+if ((password.includes(username)) == true) {
+    booleanVarInclude = false;
+    console.log("The username cannot be in the password")
+} else {
+    booleanVarInclude = true;
+    console.log("Success")
+}
 
-if ((username.length + 1) > 20)
-{
+if ((username.length + 1) > 20) {
     console.log("The username must be less than 20 characters.");
     booleanVarLength = false;
-}
-else
-{
+} else {
     console.log("Success");
     booleanVarLength = true;
 }
 
-if ((username.includes(" ")) || (password.includes(" ")))
-{
+if ((username.includes(" ")) || (password.includes(" "))) {
     console.log("The username or password cannot contain whitespace");
     booleanVarWhiteSpace = false;
-}
-else
-{
+} else {
     console.log("Success");
     booleanVarWhiteSpace = true;
 }
 
-
-
-
-if((booleanVarInclude && booleanVarLength && booleanVarWhiteSpace &&
-    booleanPassLength) == true)
-{
-     console.log("You're all set");
-}
-else console.log("something is wrong yo");
+if ((booleanVarInclude && booleanVarLength && booleanVarWhiteSpace &&
+    booleanPassLength) == true) {
+    console.log("You're all set");
+} else console.log("something is wrong yo");
 
 
 

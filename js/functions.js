@@ -10,7 +10,7 @@
  */
 
 function sayHello(name){
-     return console.log("Hello! " + name);
+     console.log("Hello! " + name);
 
 }
 
