@@ -45,16 +45,46 @@
 
 // console.log(parseFloat(discountedAmount.toFixed(2)));
 
-let userAge = "32"
-let hopefullyANumber = parseInt(userAge);
+// let userAge = "32"
+// let hopefullyANumber = parseInt(userAge);
+//
+// NaN is a falsey. certain values are iherintly false. NaN, null, undefined
+// 0, -0, ""
+//
+// if(hopefullyANumber){
+//     console.log("your age is: " + userAge);
+// }else{
+//     console.log("that was not a valid age. try agaain dawg");
+// }
+//
+// console.log();
 
-//NaN is a falsey. certain values are iherintly false. NaN, null, undefined
-//0, -0, ""
+// let age = 21;
+// let hasDriversLicense = true;
+// let moneyInWallet = 5.32;
 
-if(hopefullyANumber){
-    console.log("your age is: " + userAge);
-}else{
-    console.log("that was not a valid age. try agaain dawg");
-}
+//they must be atleast 21 y/o
+//AND have drivers license
+//AND have atleast 5$
 
-console.log();
+// let canGetADrink = (age >= 21)
+//     && (hasDriversLicense)
+//     && (moneyInWallet >= 5.00);
+//
+// console.log(canGetADrink);
+
+let didTheDishes = true;
+let vacuumed = false;
+let cleanedTheRoom = false;
+
+//console.log(!cleanedTheRoom);
+
+// if(!cleanedTheRoom){
+//
+//     console.log("why");
+// }else{
+//     console.log("we making progress");
+//}
+//console.log(didTheDishes || vacuumed || cleanedTheRoom);
+
+console.log(!!"");

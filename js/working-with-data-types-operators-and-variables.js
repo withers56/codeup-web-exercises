@@ -86,7 +86,9 @@ console.log(sample.concat(" Class"));
 console.log(sample.indexOf("c"));// -1, there is no lowercase c. could negate
 //by chaning it all to lowercase before running indexOf.
 console.log(sample.indexOf("C"));
-console.log(sample.substr(6,11));
+console.log(sample.substr(sample.indexOf("C"),6));
+
+console.log(sample.match(/Codeup/cd ));
 
 var movieCount = 3;
 var daysRented = 9;
