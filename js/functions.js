@@ -13,7 +13,8 @@ function sayHello(name){
      return console.log("Hello! " + name);
 
 }
-typeof sayHello("William");
+
+sayHello("William");
 
 /**
  * TODO:
