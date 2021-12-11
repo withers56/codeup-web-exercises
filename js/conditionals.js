@@ -29,26 +29,26 @@ function analyzeColor(color) {
     color = color.toLowerCase();
 
     if (color == "blue") {
-        alert("Blue is the color of the ocean!");
+        //alert("Blue is the color of the ocean!");
         console.log("Blue is the color of the ocean!");
     } else if (color == "red") {
-        alert("Red is the color of jad");
+        //alert("Red is the color of jad");
         console.log("Red is the color of jad");
     } else if (color == "yellow"){
-        alert("Yellow is the color of a sunflower");
+        //alert("Yellow is the color of a sunflower");
         console.log("Yellow is the color of a sunflower");
     } else if (color == "green"){
-        alert("Green is the color of the grass");
+        //alert("Green is the color of the grass");
         console.log("Green is the color of the grass");
     } else {
         console.log("I dont know anything about " + color);
-        alert("I dont know anything about " + color);
+       // alert("I dont know anything about " + color);
     }
 }
-//
-// let favColor = prompt("What is your favorite color?");
-//
-// analyzeColor(favColor);
+
+let favColor = "red";
+
+analyzeColor(favColor);
 
 
 
@@ -68,7 +68,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
-//analyzeColor(randomColor);
+(analyzeColor(randomColor));
 //alert(analyzeColor(randomColor));
 
 /**
@@ -129,6 +129,34 @@ analyzeColor(yourFavColor);
  * return value.
  */
 
+let luckyNum = parseInt(prompt("What was your lucky number? (0-5)"));
+let totalPrice = parseFloat(prompt("How much did you spend?"));
+
+    console.log(calculateTotal(luckyNum, totalPrice));
+
+function calculateTotal(number, price) {
+
+    switch(number) {
+
+        case 0 :
+            alert("Your lucky number was 0! not so lucky, your total is still: " + price);
+            return (price);
+        case 1 : alert("Your lucky number was 1! and your total before discount was: $" + price + " after discount its: $" + (price - .10 * price));
+            return (price - .10 * price);
+        case 2 : alert("Your lucky number was 2! and your total before discount was: $" + price + " after discount its: $" + (price - .25 * price));
+            return (price - .25 * price );
+        case 3 : alert("Your lucky number was 3! and your total before discount was: $" + price + " after discount its: $" + (price - .35 * price));
+            return (price - .35 * price );
+        case 4 : alert("Your lucky number was 4! and your total before discount was: $" + price + " after discount its: $" + (price - .50 * price));
+            return (price - .50 * price);
+        case 5 : alert("Your lucky number was 5! and your total before discount was: $" + price + " after discount its: $" + (price - 1 * price));
+            return (price - 1 * price );
+        default :
+            console.log("Invalid input");
+            break;
+    }
+}
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -138,7 +166,12 @@ analyzeColor(yourFavColor);
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+let luckyNumber = Math.floor(Math.random() * 6);
+let billTotal = prompt("What was the bills total?");
+
+
+    console.log(calculateTotal(luckyNumber, billTotal));
+
 
 /**
  * TODO:
@@ -159,12 +192,34 @@ analyzeColor(yourFavColor);
  * HINT: The way we prompt for a value could be improved
  */
 
+let choice = confirm("Would you like to enter a number?");
+
+if(choice) {
+    let number = prompt("What is your number?");
+
+    if (!isNaN(number)) {
+
+        number = parseInt(number);
+
+        if (number % 2 == 0) {
+
+            alert("This number is even!");
+
+        } else alert("This number is odd!");
+
+        alert("Your number plus 100 is: " + (number + 100))
+
+        if (number > 0) {
+            alert("Your number is positive");
+        }else alert("Your number is negative");
+
+    }alert("Learn to read!")
+
+}else alert("Thats too bad!")
 
 
-
-
-
-
+    // if(isNaN(number)){
+    //     alert("This is not a valid response, learn to read!")
 
 
 })();
