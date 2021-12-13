@@ -24,31 +24,31 @@
  * console.logging the function's return value
  */
 
-function analyzeColor(color) {
+// function analyzeColor(color) {
+//
+//     color = color.toLowerCase();
+//
+//     if (color == "blue") {
+//         //alert("Blue is the color of the ocean!");
+//         return "Blue is the color of the ocean!";
+//     } else if (color == "red") {
+//         //alert("Red is the color of jad");
+//         return "Red is the color of jad";
+//     } else if (color == "yellow"){
+//         //alert("Yellow is the color of a sunflower");
+//         return "Yellow is the color of a sunflower";
+//     } else if (color == "green"){
+//         //alert("Green is the color of the grass");
+//         return "Green is the color of the grass";
+//     } else {
+//         return "I dont know anything about " + color;
+//        // alert("I dont know anything about " + color);
+//     }
+// }
 
-    color = color.toLowerCase();
-
-    if (color == "blue") {
-        //alert("Blue is the color of the ocean!");
-        console.log("Blue is the color of the ocean!");
-    } else if (color == "red") {
-        //alert("Red is the color of jad");
-        console.log("Red is the color of jad");
-    } else if (color == "yellow"){
-        //alert("Yellow is the color of a sunflower");
-        console.log("Yellow is the color of a sunflower");
-    } else if (color == "green"){
-        //alert("Green is the color of the grass");
-        console.log("Green is the color of the grass");
-    } else {
-        console.log("I dont know anything about " + color);
-       // alert("I dont know anything about " + color);
-    }
-}
-
-let favColor = "red";
-
-analyzeColor(favColor);
+// let favColor = "red";
+//
+// console.log(analyzeColor(favColor));
 
 
 
@@ -68,32 +68,34 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
-(analyzeColor(randomColor));
+console.log(analyzeColor(randomColor));
 //alert(analyzeColor(randomColor));
 
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
+function analyzeColor(randomColor) {
+    switch (randomColor) {
 
-switch(randomColor){
-
-    case "red" :
-        alert("Jad is also the color red.");
-        break;
-    case "blue" :
-        alert("Blue is the color of the ocean");
-        break;
-    case "green" :
-        alert("Green is the color of the grass");
-        break;
-    case "yellow" :
-        alert("Yellow is the color of a sunflower");
-        break;
-    default :
-        alert("I dont know what " + randomColor + " is.");
-        break;
+        case "red" :
+            //alert("Jad is also the color red.");
+            return "Jad is also the color red."
+        case "blue" :
+            //alert("Blue is the color of the ocean");
+            return "Blue is the color of the ocean."
+        case "green" :
+            //alert("Green is the color of the grass");
+            return "Green is the color of the grass."
+        case "yellow" :
+            //alert("Yellow is the color of a sunflower");
+            return 'Yellow is the color of a sunflower.'
+        default :
+            //alert("I dont know what " + randomColor + " is.");
+            return "I dont know what " + randomColor + " is."
+    }
 }
+
 
 /**
  * TODO:
@@ -104,7 +106,7 @@ switch(randomColor){
 
 let yourFavColor = prompt("What is your favorite color?");
 
-analyzeColor(yourFavColor);
+console.log(analyzeColor(yourFavColor));
 
 
 /* ########################################################################## */
@@ -130,16 +132,16 @@ analyzeColor(yourFavColor);
  */
 
 let luckyNum = parseInt(prompt("What was your lucky number? (0-5)"));
-let totalPrice = parseFloat(prompt("How much did you spend?"));
+let totalPrice = parseFloat(prompt("How much money did you spend?"));
 
-    console.log(calculateTotal(luckyNum, totalPrice));
+console.log(calculateTotal(luckyNum, totalPrice));
 
 function calculateTotal(number, price) {
 
     switch(number) {
 
         case 0 :
-            alert("Your lucky number was 0! not so lucky, your total is still: " + price);
+            alert("Your lucky number was 0! not so lucky, your total is still: $" + price);
             return (price);
         case 1 : alert("Your lucky number was 1! and your total before discount was: $" + price + " after discount its: $" + (price - .10 * price).toFixed(2));
             return (price - .10 * price).toFixed(2);
@@ -152,8 +154,7 @@ function calculateTotal(number, price) {
         case 5 : alert("Your lucky number was 5! and your total before discount was: $" + price + " after discount its: $" + (price - 1 * price).toFixed(2));
             return (price - 1 * price ).toFixed(2);
         default :
-            console.log("Invalid input");
-            break;
+            return "Invalid input";
     }
 }
 
@@ -201,7 +202,7 @@ if(choice) {
 
         number = parseInt(number);
 
-        if (number % 2 == 0) {
+        if (number % 2 === 0) {
 
             alert("This number is even!");
 

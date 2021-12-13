@@ -379,12 +379,34 @@ function sumOfSquares(a, b) {
 
 // console.log(sumOfSquares(2,2));
 // Write a function called doMath(operator, a, b) that takes 3 parameters. The first parameter is the name of the math function you want to apply. a and b are the two numbers to run that function on.
-//
+function doMath(operator, a, b){
+    switch (operator){
+
+        case "add" : return a + b;
+        case "subtract" : return a - b;
+        case "multiply" : return a * b;
+        case "divide" : return a / b;
+    }
+}
+
+console.log(doMath("add", 2, 98));
 // Even More Function Bonuses
 // Create a function that will return how many whitespace characters are at the beginning and end of a string.
+function whiteSpaces(string){
+    let array = string.match(/ /g)
+    return array.length;
+}
+
+// console.log(whiteSpaces("test"))
 //
 //     Create a function that takes in two string inputs.
-//
+function stringStuff(string1, string2) {
+    if (string1.includes(string2)){
+        return true;
+    }
+}
+
+console.log(stringStuff("this is a test", "this is a test"));
 //     If the second string input is present in the first, return the first input string with the second input string removed from it.
 //     If the second string input is present multiple times in the first, the second string will only be removed where it first occurs in the first string.
 //     If the second string input is not present in the first, return the first string as entered in the function.
