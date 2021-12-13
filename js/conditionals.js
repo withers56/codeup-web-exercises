@@ -141,16 +141,16 @@ function calculateTotal(number, price) {
         case 0 :
             alert("Your lucky number was 0! not so lucky, your total is still: " + price);
             return (price);
-        case 1 : alert("Your lucky number was 1! and your total before discount was: $" + price + " after discount its: $" + (price - .10 * price));
-            return (price - .10 * price);
-        case 2 : alert("Your lucky number was 2! and your total before discount was: $" + price + " after discount its: $" + (price - .25 * price));
-            return (price - .25 * price );
-        case 3 : alert("Your lucky number was 3! and your total before discount was: $" + price + " after discount its: $" + (price - .35 * price));
-            return (price - .35 * price );
-        case 4 : alert("Your lucky number was 4! and your total before discount was: $" + price + " after discount its: $" + (price - .50 * price));
-            return (price - .50 * price);
-        case 5 : alert("Your lucky number was 5! and your total before discount was: $" + price + " after discount its: $" + (price - 1 * price));
-            return (price - 1 * price );
+        case 1 : alert("Your lucky number was 1! and your total before discount was: $" + price + " after discount its: $" + (price - .10 * price).toFixed(2));
+            return (price - .10 * price).toFixed(2);
+        case 2 : alert("Your lucky number was 2! and your total before discount was: $" + price + " after discount its: $" + ((price - .25 * price).toFixed(2)));
+            return (price - .25 * price ).toFixed(2);
+        case 3 : alert("Your lucky number was 3! and your total before discount was: $" + price + " after discount its: $" + (price - .35 * price).toFixed(2));
+            return (price - .35 * price ).toFixed(2);
+        case 4 : alert("Your lucky number was 4! and your total before discount was: $" + price + " after discount its: $" + (price - .50 * price).toFixed(2));
+            return (price - .50 * price).toFixed(2);
+        case 5 : alert("Your lucky number was 5! and your total before discount was: $" + price + " after discount its: $" + (price - 1 * price).toFixed(2));
+            return (price - 1 * price ).toFixed(2);
         default :
             console.log("Invalid input");
             break;
@@ -213,7 +213,7 @@ if(choice) {
             alert("Your number is positive");
         }else alert("Your number is negative");
 
-    }alert("Learn to read!")
+    }else alert("Learn to read!")
 
 }else alert("Thats too bad!")
 
