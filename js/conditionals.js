@@ -202,20 +202,20 @@ if(choice) {
     if (!isNaN(number)) {
 
         if (number % 2 === 0) {
-
             alert("This number is even!");
 
         } else alert("This number is odd!");
 
-        alert("Your number plus 100 is: " + (number + 100))
+        alert("Your number plus 100 is: " + (number + 100));
 
         if (number > 0) {
             alert("Your number is positive");
-        }else alert("Your number is negative");
 
-    }else alert("Learn to read!")
+        } else alert("Your number is negative");
 
-}else alert("That's too bad!")
+    } else alert("Learn to read!");
+
+} else alert("That's too bad!");
 
 
     // if(isNaN(number)){

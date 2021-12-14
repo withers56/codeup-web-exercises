@@ -30,22 +30,101 @@
 //     Determining if the length 1 string is a vowel or not
 //     Add, commit, and push to GitHub.
 
-// inputAnalasis("1");
+//try to keep functions 20 lines or less.
+
+// inputAnalasis("yes");
+// inputAnalasis(1);
+// inputAnalasis('a');
+// inputAnalasis(-234);
+// function inputAnalasis(input) {
+//
+//
+//     switch (isNaN(input)) {
+//
+//         case true : {
+//             if (isSingleChar(input)) {
+//                 isAVowel(input);
+//             }else console.log("The string's length is: " + input.length);
+//             break;
+//         }
+//         case false : {
+//             console.log('is num');
+//             oddOrEven(input);
+//             positiveOrNegative(input);
+//             break;
+//         }
+//         default : {
+//             console.log("idk");
+//         }
+//
+//
+//     }
+// }
+//
+// function oddOrEven (num) {
+//     if (num % 2 === 0){
+//         console.log("Your number " + num + " is even.");
+//     } else if (num % 2 !== 0) {
+//         console.log("Your number " + num + " is odd.");
+//     } else console.log("error");
+// }
+//     // oddOrEven()
+//
+// function positiveOrNegative(num) {
+//     if (num > 0) {
+//         console.log("Your number " + num + " is positive.")
+//     } else if (num < 0) {
+//         console.log("Your number " + num + " is negative.")
+//     } else if (num === 0) {
+//         console.log("Your number is 0.")
+//     }else console.log("error");
+// }
+// // positiveOrNegative("test")
+//
+// function isSingleChar(string) {
+//     if (string.length === 1) {
+//         console.log(string + " is a single character")
+//         return true;
+//     } else if (string.length > 1) {
+//         console.log(string + " is not a single character")
+//         return false;
+//     }else console.log("error");
+// }
+//
+// // isSingleChar("yes")
+//
+// function isAVowel(string) {
+//     if (string.toLowerCase() === 'a' || string.toLowerCase() === 'e' || string.toLowerCase() === 'i' || string.toLowerCase() === 'o' || string.toLowerCase() === 'u') {
+//         console.log(string + " is a vowel");
+//     } else console.log(string + " is not a vowel")
+// }
+
+// isAVowel("e")
+
+////////////////////////////////////////////////////////////////////////////////////
+
+inputAnalasis(prompt("Input"));
+
+
 function inputAnalasis(input) {
 
 
     switch (isNaN(input)) {
 
         case true : {
-            console.log('is not number');
+            if (isSingleChar(input)) {
+                isAVowel(input);
+            }else alert("The string's length is: " + input.length);
             break;
         }
         case false : {
-            console.log('is num');
+            alert('is num');
+            oddOrEven(input);
+            positiveOrNegative(input);
             break;
         }
         default : {
-            console.log("idk");
+            alert("idk");
         }
 
 
@@ -54,35 +133,38 @@ function inputAnalasis(input) {
 
 function oddOrEven (num) {
     if (num % 2 === 0){
-        console.log("Your number " + num + " is even.");
+        alert("Your number " + num + " is even.");
     } else if (num % 2 !== 0) {
-        console.log("Your number " + num + " is odd.");
-    } else console.log("error");
+        alert("Your number " + num + " is odd.");
+    } else alert("error");
 }
-    // oddOrEven()
+// oddOrEven()
 
 function positiveOrNegative(num) {
     if (num > 0) {
-        console.log("Your number " + num + " is positive.")
+        alert("Your number " + num + " is positive.")
     } else if (num < 0) {
-        console.log("Your number " + num + " is negative.")
+        alert("Your number " + num + " is negative.")
     } else if (num === 0) {
-        console.log("Your number is 0.")
-    }else console.log("error");
+        alert("Your number is 0.")
+    }else alert("error");
 }
 // positiveOrNegative("test")
 
 function isSingleChar(string) {
     if (string.length === 1) {
-        console.log(string + " is a single character")
+        alert(string + " is a single character")
+        return true;
     } else if (string.length > 1) {
-        console.log(string + " is not a single character")
-    }else console.log("error");
+        alert(string + " is not a single character")
+        return false;
+    }else alert("error");
 }
 
-isSingleChar(1)
+// isSingleChar("yes")
 
-
-
-
-
+function isAVowel(string) {
+    if (string.toLowerCase() === 'a' || string.toLowerCase() === 'e' || string.toLowerCase() === 'i' || string.toLowerCase() === 'o' || string.toLowerCase() === 'u') {
+        alert(string + " is a vowel");
+    } else alert(string + " is not a vowel")
+}
