@@ -208,7 +208,7 @@ if(choice) {
 
         alert("Your number plus 100 is: " + (number + 100));
 
-        if (number > 0) {
+        if (number >= 0) {
             alert("Your number is positive");
 
         } else alert("Your number is negative");

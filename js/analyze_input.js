@@ -103,18 +103,16 @@
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-inputAnalasis(prompt("Input"));
-
+inputAnalasis(prompt("Input a number or a string."));
 
 function inputAnalasis(input) {
-
 
     switch (isNaN(input)) {
 
         case true : {
             if (isSingleChar(input)) {
                 isAVowel(input);
-            }else alert("The string's length is: " + input.length);
+            } else alert("The string's length is: " + input.length);
             break;
         }
         case false : {
@@ -126,8 +124,6 @@ function inputAnalasis(input) {
         default : {
             alert("idk");
         }
-
-
     }
 }
 
@@ -141,11 +137,11 @@ function oddOrEven (num) {
 // oddOrEven()
 
 function positiveOrNegative(num) {
-    if (num > 0) {
+    if (parseInt(num) > 0) {
         alert("Your number " + num + " is positive.")
-    } else if (num < 0) {
+    } else if (parseInt(num) < 0) {
         alert("Your number " + num + " is negative.")
-    } else if (num === 0) {
+    } else if (parseInt(num) === 0) {
         alert("Your number is 0.")
     }else alert("error");
 }
