@@ -111,7 +111,7 @@ function inputAnalasis(input) {
 
         case true : {
             if (isSingleChar(input)) {
-                isAVowel(input);
+                isAVowelV2(input);
             } else alert("The string's length is: " + input.length);
             break;
         }
@@ -159,8 +159,23 @@ function isSingleChar(string) {
 
 // isSingleChar("yes")
 
-function isAVowel(string) {
-    if (string.toLowerCase() === 'a' || string.toLowerCase() === 'e' || string.toLowerCase() === 'i' || string.toLowerCase() === 'o' || string.toLowerCase() === 'u') {
-        alert(string + " is a vowel");
-    } else alert(string + " is not a vowel")
+// function isAVowel(string) {
+//     if (string.toLowerCase() === 'a' || string.toLowerCase() === 'e' || string.toLowerCase() === 'i' || string.toLowerCase() === 'o' || string.toLowerCase() === 'u') {
+//         alert(string + " is a vowel");
+//     } else alert(string + " is not a vowel")
+// }
+
+function isAVowelV2(string) {
+    switch (string.toLowerCase()) {
+        case 'a' : case 'e' : case 'i' : case 'o' : case 'u' : {
+            alert(string + " is a vowel");
+            break;
+        }
+        default : {
+            alert(string + " is not a vowel");
+            break;
+        }
+    }
 }
+
+//isAVowelV2("b")
