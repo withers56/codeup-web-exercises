@@ -406,19 +406,38 @@ function stringStuff(string1, string2) {
     }
 }
 
-console.log(stringStuff("this is a test", "this is a test"));
+// console.log(stringStuff("this is a test", "this is a test"));
 //     If the second string input is present in the first, return the first input string with the second input string removed from it.
 //     If the second string input is present multiple times in the first, the second string will only be removed where it first occurs in the first string.
 //     If the second string input is not present in the first, return the first string as entered in the function.
 // Create a function that takes in a string and returns true if the last letter is an "a" (otherwise, return false).
-//
+function lastLetterA(string) {
+    return string.includes("a", string.length-1);
+}
+
+// console.log(lastLetterA("asdfkwdfnbnkbkhkbhdfbhswbdfhwsdhkaaa"));
 // EXTRA CHALLENGE: create a function that will return how many whitespace characters are at the beginning of a string (hint: use regex).
 //
 // Create a function returnTrueMessage() that returns the string "Hey, it's true!"
-//
+function returnTrueMessage() {
+    return "Hey, it's true!";
+}
 // Create a function returnFalseMessage() that returns the string "Hey, it's false!"
+function returnFalseMessage(){
+    return "Hey, it's false!";
+}
 // Create a function returnMessage() that takes in a function and returns the call to the function
 // Experiement passing in different functions.
+function returnMessage(func){
+    return func;
+}
+// console.log(returnMessage(returnTrueMessage()));
 //     Create a function, willLoginUser() that takes in a username string, password string, user age, a boolean indicating if they are an admin.
-//
+function willLoginUser(username, pass, age, admin){
+    if ((username !== pass && age >= 18) || (username !== pass && admin === true)){
+        return true;
+    }else return false;
+}
 //     The function will return true if the username is not the same as the password and the user is at least 18 years old. If the user is an admin, they do not have to be a certain age but the password must still not match the username.
+
+console.log(willLoginUser("withers56", "noob123", 24, true));

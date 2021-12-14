@@ -197,10 +197,9 @@ let choice = confirm("Would you like to enter a number?");
 
 if(choice) {
     let number = prompt("What is your number?");
+    number = parseInt(number);
 
     if (!isNaN(number)) {
-
-        number = parseInt(number);
 
         if (number % 2 === 0) {
 
@@ -216,7 +215,7 @@ if(choice) {
 
     }else alert("Learn to read!")
 
-}else alert("Thats too bad!")
+}else alert("That's too bad!")
 
 
     // if(isNaN(number)){
