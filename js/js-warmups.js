@@ -23,8 +23,23 @@
 // true if that input is the number five. Otherwise it should return false.
 
 function isFive(number) {
-    if (number == 5) return true;
-    else return false;
+    return number === 5;
 }
 
-console.log(isFive(5));
+// console.log(isFive(1));
+
+////////////////////////////////////////////////////////////////////////////////////
+
+// Make a function named isMultipleOfThree that takes in an input and returns a
+// boolean indicating whether or not the input is a multiple of three.
+
+function isMultipleOfThree(input) {
+    return input % 3 === 0;
+}
+
+console.log(isMultipleOfThree(27));
+
+
+
+
+
