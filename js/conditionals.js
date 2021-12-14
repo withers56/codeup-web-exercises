@@ -28,16 +28,16 @@
 //
 //     color = color.toLowerCase();
 //
-//     if (color == "blue") {
+//     if (color === "blue") {
 //         //alert("Blue is the color of the ocean!");
 //         return "Blue is the color of the ocean!";
-//     } else if (color == "red") {
+//     } else if (color === "red") {
 //         //alert("Red is the color of jad");
 //         return "Red is the color of jad";
-//     } else if (color == "yellow"){
+//     } else if (color === "yellow"){
 //         //alert("Yellow is the color of a sunflower");
 //         return "Yellow is the color of a sunflower";
-//     } else if (color == "green"){
+//     } else if (color === "green"){
 //         //alert("Green is the color of the grass");
 //         return "Green is the color of the grass";
 //     } else {

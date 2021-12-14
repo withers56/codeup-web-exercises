@@ -440,4 +440,115 @@ function willLoginUser(username, pass, age, admin){
 }
 //     The function will return true if the username is not the same as the password and the user is at least 18 years old. If the user is an admin, they do not have to be a certain age but the password must still not match the username.
 
-console.log(willLoginUser("withers56", "noob123", 24, true));
+// console.log(willLoginUser("withers56", "noob123", 24, true));
+
+
+
+
+// Create a file named conditionals.js inside the js directory.
+//     Create a function called analyzeColor1 that takes a parameter called color
+// In your function, use ONLY if statements to print the following:
+//     “blue is the color of the sky” if the value of color is “blue”
+// “red is the color of love” if the value of color is “red”
+// “green is the color of envy” if the value of color is “green”
+// “I don’t know that color” if the value of color is anything else
+// HINT: use return in the conditional code blocks to prevent from printing
+// multiple times for the same argument
+// Add, commit, and push to GitHub.
+
+
+
+
+
+
+// function analyzeColor(color) {
+//
+//     if (isNaN(color)) {
+//
+//         color = color.toLowerCase();
+//
+//         if (color === "blue") {
+//             //alert("Blue is the color of the ocean!");
+//             return "Blue is the color of the ocean!";
+//         }else if (color === "red") {
+//             //alert("Red is the color of jad");
+//             return "Red is the color of jad";
+//         }else if (color === "yellow") {
+//             //alert("Yellow is the color of a sunflower");
+//             return "Yellow is the color of a sunflower";
+//         }else if (color === "green") {
+//             //alert("Green is the color of the grass");
+//             return "Green is the color of the grass";
+//         }else {
+//             return "I dont know anything about " + color;
+//             // alert("I dont know anything about " + color);
+//         }
+//     } return "This isnt a string";
+// }
+//
+//
+// console.log(analyzeColor("blue"));
+// console.log(analyzeColor("cyan"));
+// console.log(analyzeColor("red"));
+// console.log(analyzeColor("yellow"));
+// console.log(analyzeColor("green"));
+// console.log(analyzeColor("Orange"));
+// console.log(analyzeColor(1));
+
+
+function analyzeColor(color) {
+
+    if (isNaN(color)) {
+
+        switch (color.toLowerCase()) {
+
+            case "blue": {
+                //alert("Blue is the color of the ocean!");
+                return "Blue is the color of the ocean!";
+            }
+            case "red" : {
+                //alert("Red is the color of jad");
+                return "Red is the color of jad";
+            }
+            case "yellow" : {
+                //alert("Yellow is the color of a sunflower");
+                return "Yellow is the color of a sunflower";
+            }
+            case "green" : {
+                //alert("Green is the color of the grass");
+                return "Green is the color of the grass";
+            }
+            default : {
+                return "I dont know anything about " + color;
+                // alert("I dont know anything about " + color);
+            }
+        }
+        //IF USING BREAKS WOULD RESUME HERE.
+    }
+    return "This isnt a string";
+}
+
+
+function validAge(age) {
+    if (age >= 10 && age <= 100) {
+
+    }
+    //fall through
+}
+
+
+var result;
+if(2 + 2 === 4) {
+    result = 'yay it equals 4';
+} else {
+    result = 'boo it does not equal 4';
+}
+console.log(result);
+
+result = (2 + 2 === 4) ? 'yay it equals 4' : 'boo it does not equal 4';//truthy falsey, ? , true statment, false statment
+
+console.log(result);
+
+
+
+
