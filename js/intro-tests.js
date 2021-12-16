@@ -1,5 +1,5 @@
 function count(input) {
-    if(typeof input === "string"){
+    if (typeof input === "string") {
         return input.length;
     } else return false;
 }
