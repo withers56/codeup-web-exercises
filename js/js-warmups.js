@@ -37,7 +37,36 @@ function isMultipleOfThree(input) {
     return input % 3 === 0;
 }
 
-console.log(isMultipleOfThree(27));
+//console.log(isMultipleOfThree(27));
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+evenNumbersOneThroughTwentyFive();
+
+function evenNumbersOneThroughTwentyFive(input) {
+    let counter = 0;
+
+    while (counter <= 25) {
+
+        if (counter % 2 === 0) console.log(counter);
+
+        counter = counter + 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
