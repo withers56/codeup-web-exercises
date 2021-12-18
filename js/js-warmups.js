@@ -50,7 +50,7 @@ function evenNumbersOneThroughTwentyFive(input) {
 
         if (counter % 2 === 0) console.log(counter);
 
-        counter = counter + 1;
+        counter++;
     }
 }
 
