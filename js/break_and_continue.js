@@ -12,7 +12,7 @@ function oddNumBetween1And50(){
 
     alert("Valid");
 }
-uglyNumber();
+//uglyNumber();
 function uglyNumber(){
     let userNum = 27;
     console.log("Number to skip: " + userNum);
