@@ -41,20 +41,66 @@ function isMultipleOfThree(input) {
 
 /////////////////////////////////////////////////////////////////////////////////////
 
-evenNumbersOneThroughTwentyFive();
+// evenNumbersOneThroughTwentyFive();
+//
+// function evenNumbersOneThroughTwentyFive(input) {
+//     let counter = 0;
+//
+//     while (counter <= 25) {
+//
+//         if (counter % 2 === 0) console.log(counter);
+//
+//         counter++;
+//     }
+// }
 
-function evenNumbersOneThroughTwentyFive(input) {
-    let counter = 0;
+////////////////////////////////////////////////////////////////////////////////////////
 
-    while (counter <= 25) {
+// Write the code necessary to output the first 50 prime numbers
+// Recommend starting your loop at 1 and ending your loop once you've calculated 50 prime numbers.
+// https://en.wikipedia.org/wiki/Prime_number
 
-        if (counter % 2 === 0) console.log(counter);
+// This one will take some thought. You will need something to count how many prime numbers have
+// been calculated, as well as another something to know what raw number your are currently on!
 
-        counter++;
+function primeNumberTest(){
+    let primeCounter = 0;
+    let number = 1;
+    let prime = true;
+
+
+while (primeCounter !== 50) {
+
+    if (number === 1) {
+        console.log("neither prime or composite");
+    } else if (number > 1) {
+
+        for (let i = 2; i < number; i++) {
+            if (number % i === 0) {
+                prime = false;
+                break;
+            }
+        }
+        if (prime) {
+            console.log("is prime")
+            console.log(primeCounter)
+            primeCounter++;
+            console.log(primeCounter)
+
+
+        } else {
+            console.log("is not prime");
+
+        }
+
     }
+    number++;
+    // console.log("test")
 }
 
+}
 
+primeNumberTest()
 
 
 
