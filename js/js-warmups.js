@@ -213,27 +213,36 @@ function isMultipleOfThree(input) {
 // happens to be 42, console log a separate message at the end of the function
 // to say: "Did you bring your towel?"
 
-function getMeaningOfLife(meaningfulNum) {
+// function getMeaningOfLife(meaningfulNum) {
+//
+//     let counter = 1;
+//     meaningfulNum = parseInt(meaningfulNum);
+//
+//     if (isNaN(meaningfulNum) || meaningfulNum <= 0) {
+//         console.log("Invalid input");
+//         return;
+//     }
+//
+//     while (counter !== meaningfulNum) {
+//         counter++;
+//     }
+//
+//     console.log("The meaning of life, the universe, and everything is " + counter);
+//
+//     if (counter === 42) {
+//         console.log("did you bring your towel?");
+//     }
+// }
+//
+// getMeaningOfLife(true);
 
-    let counter = 1;
-    meaningfulNum = parseInt(meaningfulNum);
+/////////////////////////////////////////////////////////////////////
+let someCondition = 10;
 
-    if (isNaN(meaningfulNum)) {
-        console.log("This isnt a number!");
-        return;
-    }
-
-    while (counter !== meaningfulNum) {
-        console.log("Its isnt: " + counter)
-        counter++;
-    }
-    console.log("The meaning of life, the universe, and everything is " + meaningfulNum);
-    if (meaningfulNum === 42) {
-        console.log("did your towel?");
-    }
-}
-
-getMeaningOfLife('42');
+do {
+    console.log("The loop ran!");
+    someCondition++;
+} while (someCondition < 20);
 
 
 

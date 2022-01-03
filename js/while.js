@@ -21,7 +21,7 @@ function doWhileLoopThing(){
         if(customerCones <= targetSales) {
             targetSales = targetSales - customerCones;
             console.log("There is: " + targetSales + " Cones left.")
-        } else console.log("There isnt enough left to meet that order!")
+        } else console.log("There isnt enough left to meet that order!");
         customerCones = (Math.floor(Math.random() * 5) + 1);
 
     }while (targetSales > 0);
