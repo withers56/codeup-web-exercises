@@ -185,18 +185,55 @@ function isMultipleOfThree(input) {
 //     HINT: start by defining the correct password and don't' +
 // ' forget to link your html file
 
-function getPassword() {
-    let actualPassword = "Coffeelover12";
-    let passwordInput = prompt("Please enter the password: ");
+// function getPassword() {
+//     let actualPassword = "Coffeelover12";
+//     let passwordInput = prompt("Please enter the password: ");
+//
+//     while (passwordInput !== actualPassword){
+//         passwordInput = prompt("Invalid password, please try again.");
+//     }
+//     alert("Correct password!");
+// }
+// getPassword();
 
-    while (passwordInput !== actualPassword){
-        passwordInput = prompt("Invalid password, please try again.");
+////////////////////////////////////////////////////////////////////////////////////
+
+// B) getMeaningOfLife
+// Write a function named getMeaningOfLife which accepts one parameter, meaningfulNum.
+//     This function will use a while loop to compare its current number
+// (a variable named counter) against the meaningfulNum.
+//     While the counter is not equivalent to the meaningfulNum, continue the loop.
+//     Once that condition is broken, console log a string telling the user
+// "The meaning of life, the universe, and everything is [your meaningful number]"
+// Thinking about the above function, getMeaningOfLife, let’s ask a question:
+//     What happens if the value of meaningfulNum is a non-numeric?
+//     Write some code to account for this case. How the function handles
+// the situation is up to you!
+//     Let’s continue with getMeaningOfLife: If the value of meaningfulNum
+// happens to be 42, console log a separate message at the end of the function
+// to say: "Did you bring your towel?"
+
+function getMeaningOfLife(meaningfulNum) {
+
+    let counter = 1;
+    meaningfulNum = parseInt(meaningfulNum);
+
+    if (isNaN(meaningfulNum)) {
+        console.log("This isnt a number!");
+        return;
     }
-    alert("Correct password!");
+
+    while (counter !== meaningfulNum) {
+        console.log("Its isnt: " + counter)
+        counter++;
+    }
+    console.log("The meaning of life, the universe, and everything is " + meaningfulNum);
+    if (meaningfulNum === 42) {
+        console.log("did your towel?");
+    }
 }
-getPassword();
 
-
+getMeaningOfLife('42');
 
 
 
