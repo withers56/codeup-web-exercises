@@ -145,35 +145,55 @@ function isMultipleOfThree(input) {
 // How do you want to handle that?
 
 
-function getFizzBuzz(startingNum) {
+// function getFizzBuzz(startingNum) {
+//
+//     if (startingNum % 3 === 0 && startingNum % 5 === 0) {
+//         return "FIZZ BUZZ";
+//     }else if (startingNum % 3 === 0) {
+//         console.log("fizz");
+//     } else if (startingNum % 5 === 0) {
+//         console.log("buzz");
+//     }
+// }
+//
+// function tryGetFizzBuzz(input){
+//     let maybeFizzBuzzIdk = getFizzBuzz(input);
+//
+//     if (!!maybeFizzBuzzIdk) {
+//         console.log(maybeFizzBuzzIdk);
+//     }
+// }
+//
+// function runProgramThing() {
+//     tryGetFizzBuzz(9);
+//     tryGetFizzBuzz(10);
+//     tryGetFizzBuzz(15);
+// }
+//
+// runProgramThing();
 
-    if (startingNum % 3 === 0 && startingNum % 5 === 0) {
-        return "FIZZ BUZZ";
-    }else if (startingNum % 3 === 0) {
-        console.log("fizz");
-    } else if (startingNum % 5 === 0) {
-        console.log("buzz");
+//////////////////////////////////////////////////////////////////////
+
+// getPaswordInput
+// Define a function named getPassword() which performs the following
+// actions:
+//     Using prompt(), alert(), variables, and a while-loop,
+//     ask the user to
+// input their password until their entry matches your hard-coded
+// password value.
+//     HINT: start by defining the correct password and don't' +
+// ' forget to link your html file
+
+function getPassword() {
+    let actualPassword = "Coffeelover12";
+    let passwordInput = prompt("Please enter the password: ");
+
+    while (passwordInput !== actualPassword){
+        passwordInput = prompt("Incorrect password, please try again.");
     }
+    alert("Correct password!");
 }
-
-function tryGetFizzBuzz(input){
-    let maybeFizzBuzzIdk = getFizzBuzz(input);
-
-    if (!!maybeFizzBuzzIdk) {
-        console.log(maybeFizzBuzzIdk);
-    }
-}
-
-function runProgramThing() {
-    tryGetFizzBuzz(9);
-    tryGetFizzBuzz(10);
-    tryGetFizzBuzz(15);
-}
-
-runProgramThing();
-
-
-
+getPassword()
 
 
 
