@@ -63,52 +63,114 @@ function isMultipleOfThree(input) {
 // This one will take some thought. You will need something to count how many prime numbers have
 // been calculated, as well as another something to know what raw number your are currently on!
 
-function primeNumberTest(){
-    let primeCounter = 0;
-    let number = 1;
-    let prime = true;
+// function primeNumberTest(){
+//     let primeCounter = 0;
+//     let number = 1;
+//     let prime = true;
+//
+//
+// while (primeCounter !== 50) {
+//
+//     if (number === 1) {
+//         console.log("neither prime or composite");
+//     } else if (number > 1) {
+//
+//         for (let i = 2; i < number; i++) {
+//             if (number % i === 0) {
+//                 prime = false;
+//                 break;
+//             }
+//         }
+//         if (prime) {
+//             console.log("is prime")
+//             console.log(primeCounter)
+//             primeCounter++;
+//             console.log(primeCounter)
+//
+//
+//         } else {
+//             console.log("is not prime");
+//
+//         }
+//
+//     }
+//     number++;
+//     // console.log("test")
+// }
+//
+// }
+//
+// primeNumberTest()
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Write a function called add(num1, num2) which returns the sum of a and b
+// Write a function named square(numToSqr) which takes in a number (numToSqr) and returns the number multiplied by itself
+// Write a function called sumOfSquares(a, b).
+//     You should find the square of a, then the square of b.
+//     Invoke add(num1, num2) and pass the new squared values in as arguments.
+
+// function add(num1, num2) {
+//     return num1 + num2;
+// }
+//
+// function square(numToSqr) {
+//     return numToSqr * numToSqr;
+// }
+//
+// function sumOfSquares(a, b) {
+//     return add(square(a), square(b));
+// }
+//
+// console.log(add(2.5, 4));
+//
+// console.log(square(2));
+//
+// console.log(sumOfSquares(4, 2));
 
 
-while (primeCounter !== 50) {
+///////////////////////////////////////////////////////////////////////////////////
 
-    if (number === 1) {
-        console.log("neither prime or composite");
-    } else if (number > 1) {
-
-        for (let i = 2; i < number; i++) {
-            if (number % i === 0) {
-                prime = false;
-                break;
-            }
-        }
-        if (prime) {
-            console.log("is prime")
-            console.log(primeCounter)
-            primeCounter++;
-            console.log(primeCounter)
+// FIZZ-BUZZZZZZZ
+// Write a function named getFizzBuzz(startingNum) which performs the following actions:
+//     If startingNum is divisible by 3
+// console log "fizz"
+// Else, if startingNum is divisible by 5
+// console log "buzz"
+// If startingNum is divisible by 3 AND divisible by 5
+// return a string which says "FIZZ BUZZ"
+// Thinking about getFizzBuzz(startingNum), let's console log the return value ' +
+// 'of this function
+// What if getFizzBuzz doesn't return a value (VOID)?
+// How do you want to handle that?
 
 
-        } else {
-            console.log("is not prime");
+function getFizzBuzz(startingNum) {
 
-        }
-
+    if (startingNum % 3 === 0 && startingNum % 5 === 0) {
+        return "FIZZ BUZZ";
+    }else if (startingNum % 3 === 0) {
+        console.log("fizz");
+    } else if (startingNum % 5 === 0) {
+        console.log("buzz");
     }
-    number++;
-    // console.log("test")
 }
 
+function tryGetFizzBuzz(input){
+    let maybeFizzBuzzIdk = getFizzBuzz(input);
+
+    if (!!maybeFizzBuzzIdk) {
+        console.log(maybeFizzBuzzIdk);
+    }
 }
 
-primeNumberTest()
+function runProgramThing() {
+    tryGetFizzBuzz(9);
+    tryGetFizzBuzz(10);
+    tryGetFizzBuzz(15);
+}
 
-
-
-
-
-
-
-
+runProgramThing();
 
 
 
