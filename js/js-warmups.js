@@ -1,3 +1,4 @@
+"use strict";
 // Using the two provided variables, create a piece of logic which will
 // determine if a person is qualified to be extended an auto loan.
 
@@ -189,11 +190,11 @@ function getPassword() {
     let passwordInput = prompt("Please enter the password: ");
 
     while (passwordInput !== actualPassword){
-        passwordInput = prompt("Incorrect password, please try again.");
+        passwordInput = prompt("Invalid password, please try again.");
     }
     alert("Correct password!");
 }
-getPassword()
+getPassword();
 
 
 
