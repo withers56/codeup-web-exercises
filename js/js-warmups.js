@@ -246,6 +246,110 @@ function isMultipleOfThree(input) {
 
 ////////////////////////////////////////////////////////////////////////////
 
+// function petThoseDoggos(numberOfDoggos) {
+//
+//     for (let i = 1; i <= numberOfDoggos; i++) {
+//         console.log(`${i}: **Pats that good boi!**`)
+//
+//     }
+// }
+// petThoseDoggos(42);
+
+////////////////////////////////////////////////////////////////////////////////////
+
+// TODO: MINI EXERCISE
+//      Write a function which uses a for-loop and
+//      -> accepts the number of times to iterate as a parameter
+//      -> only logs *if the iteration number is odd*
+
+function forLoopIterate(input) {
+    for (let i = 1; i <= input; i++) {
+        if (i % 2 !== 0) {
+            console.log(i);
+        }
+    }
+}
+//forLoopIterate(7);
+
+// TODO: MINI EXERCISE
+//      Write a function which uses a for-loop and
+//      -> accepts the number of times to iterate as a parameter
+//      -> logs "This is an even iteration" on the evens
+//      -> logs "This is an odd iteration" on the odds
+
+function forLoopIterate2(input) {
+    for (let i = 1; i <= input; i++) {
+        if (i % 2 === 0) {
+            console.log(`${i} is an even iteration`);
+        } else console.log(`${i} is an odd iteration`);
+    }
+}
+//forLoopIterate2(10);
+
+// TODO: MINI EXERCISE
+//      Make a new version of your getPassword function using a for-loop!
+//      -> The purpose of the for-loop is to only allow a maximum number of attempts
+//          -> If the max attempt used unsuccessfully, alert the user of such and RETURN or BREAK
+//      -> Once the user enters the correct password, use the 'break' keyword to end the loop
+//      -> After the loop concludes, alert the use they have entered the correct password
+
+// function getPasswordForLoop() {
+//     let actualPass = 'Coffeelover12';
+//     let userPass = '';
+//
+//     for (let i = 0; i < 3; i++) {
+//         userPass = prompt("Please enter the correct password");
+//
+//         if (userPass === actualPass) {
+//             break;
+//         }
+//         if (i === 2) {
+//             alert("Too many attempts, try again later")
+//             return;
+//         }
+//     }
+//     alert("Correct password!");
+// }
+//
+// getPasswordForLoop();
+
+////////////////////////////////////////////////////////////////////////////////////
+
+// continue, starts next iteration
+// break, loop finishes immediately
+// console.log("start of loop");
+// for (let i = 0; i < 3; i++) {
+//     console.log("start of loop body");
+//
+//     if (i % 2 === 0) {
+//         continue;
+//     }
+//     console.log(`i = ${i}`);
+//
+//     console.log("End of loop body");
+// }
+// console.log("end of loop");
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

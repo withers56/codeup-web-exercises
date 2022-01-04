@@ -3,7 +3,7 @@ function showMultiplicationTable (num){
         console.log(num + " x " + i + " = " + (num * i));
     }
 }
-//showMultiplicationTable(7)
+//showMultiplicationTable(12)
 
 function tenRandomNumbers(){
     for (var i = 1; i <= 10; i++){
@@ -18,7 +18,7 @@ function tenRandomNumbers(){
 function numberCascade() {
     for (var i = 1; i < 10; i++) {
         var array = [];
-        for ( count =1; count <= i; count++) {
+        for ( let count = 1; count <= i; count++) {
             array.push(i);
         }
         console.log(array.join(""));
@@ -28,9 +28,8 @@ function numberCascade() {
 //numberCascade();
 
 function numbersMinusFive(){
-    for (i = 100; i > 0; ) {
+    for (let i = 100; i > 0; i -= 5) {
         console.log(i);
-        i = i - 5;
     }
 }
 //numbersMinusFive()

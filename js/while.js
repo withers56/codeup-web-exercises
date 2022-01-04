@@ -21,12 +21,12 @@ function doWhileLoopThing(){
 
         if(customerCones <= targetSales) {
             targetSales = targetSales - customerCones;
-            console.log("There is: " + targetSales + " Cones left.")
+            console.log("There is: " + targetSales + " Cones left.");
         } else console.log("There isnt enough left to meet that order!");
 
     }while (targetSales > 0);
 
-    console.log("*****************************")
+    console.log("*****************************");
     console.log("Yay! They have all been sold!");
 }
 
