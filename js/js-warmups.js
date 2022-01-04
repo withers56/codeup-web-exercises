@@ -237,12 +237,15 @@ function isMultipleOfThree(input) {
 // getMeaningOfLife(true);
 
 /////////////////////////////////////////////////////////////////////
-let someCondition = 10;
+// let someCondition = 10;
+//
+// do {
+//     console.log("The loop ran!");
+//     someCondition++;
+// } while (someCondition < 20);
 
-do {
-    console.log("The loop ran!");
-    someCondition++;
-} while (someCondition < 20);
+////////////////////////////////////////////////////////////////////////////
+
 
 
 

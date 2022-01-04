@@ -10,10 +10,11 @@ function loopThing(){
 
 function doWhileLoopThing(){
     let targetSales = (Math.floor(Math.random() * 50 + 50));
-    let customerCones = (Math.floor(Math.random() * 5) + 1);
+
     console.log(targetSales);
 
     do {
+        let customerCones = (Math.floor(Math.random() * 5) + 1);
         console.log("*****************************");
         console.log("You have: " + targetSales + " Cones.");
         console.log("Customer wants: " + customerCones + " Cones.");
@@ -22,7 +23,6 @@ function doWhileLoopThing(){
             targetSales = targetSales - customerCones;
             console.log("There is: " + targetSales + " Cones left.")
         } else console.log("There isnt enough left to meet that order!");
-        customerCones = (Math.floor(Math.random() * 5) + 1);
 
     }while (targetSales > 0);
 
