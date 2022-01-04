@@ -19,9 +19,10 @@ function uglyNumber(){
     for (i = 1; i <= 50; i++) {
         if (userNum === i) {
             console.log(userNum + " Yikes! thats an ugly number");
-        } else if (i % 2 === 0){
             continue;
-        }else console.log("Here is an odd number: " + i);
-
+        }
+        if (i % 2 !== 0){
+            console.log("Here is an odd number: " + i);
+        }
     }
 }
