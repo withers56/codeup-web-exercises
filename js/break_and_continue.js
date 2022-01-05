@@ -1,9 +1,9 @@
-//oddNumBetween1And50();
+oddNumBetween1And50();
 
 function oddNumBetween1And50(){
     let userOddNum = prompt("Please enter a odd number between 1 and 50.");
 
-    while (true) {
+    while (userOddNum < 1 || userOddNum > 50) {
         if (userOddNum % 2 === 1){
             break;
         }else  userOddNum = prompt("That was not an odd number!, try again.");
@@ -12,7 +12,7 @@ function oddNumBetween1And50(){
 
     alert("Valid");
 }
-uglyNumber();
+//uglyNumber();
 function uglyNumber(){
     let userNum = 27;
     console.log("Number to skip: " + userNum);
