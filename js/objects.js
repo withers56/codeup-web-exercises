@@ -175,7 +175,7 @@
 
         }
     }
-bookInfo(books);
+//bookInfo(books);
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -186,5 +186,46 @@ bookInfo(books);
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    // let testArray = [
+    //     {
+    //         number: 1,
+    //         color: 'red'
+    //     }
+    // ]
+
+    // testArray.push({number: 2, color: {c1: 'green', c2: 'yellow'}});
+    //alert(testArray[0].number + " " + testArray[0].color);
+
+    function createBook(array) {
+        let confirmation = true;
+
+        do {
+            let newTitle = '';
+            let newFirstName = '';
+            let newLastName = '';
+
+            newTitle = prompt("What is the title?");
+            newFirstName = prompt("What is the authors first name?");
+            newLastName = prompt("What is the authors last name?");
+
+            array.push({title: newTitle, author: {firstName: newFirstName, lastName: newLastName}});
+
+            confirmation = confirm("do you want to add another book?");
+        } while (confirmation)
+        // console.log(array);
+    }
+
+    function showBookInfo(array) {
+        bookInfo(array);
+    }
+
+
+    createBook(books);
+    showBookInfo(books);
+
+
+
+
 
 })();

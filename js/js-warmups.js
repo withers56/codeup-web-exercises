@@ -341,15 +341,17 @@ function forLoopIterate2(input) {
 
 let favoriteArtist = ['Metallica', 'Kill switch engage', 'avenge sevenfold', 'soad', '3dd'];
 
-function arrayLogger(array) {
-    console.log(array[0]);
-    console.log(array[2]);
-    console.log(array[array.length -1]);
-}
+// function arrayLogger(array) {
+//     console.log(array[0]);
+//     console.log(array[2]);
+//     console.log(array[array.length -1]);
+// }
+//
+// arrayLogger(favoriteArtist);
 
-arrayLogger(favoriteArtist);
-
-
+favoriteArtist.forEach(function (guitarHero){
+    console.log(guitarHero);
+})
 
 
 
