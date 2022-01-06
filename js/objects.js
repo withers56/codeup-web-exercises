@@ -17,10 +17,10 @@
         lastName: "Withers"
     };
 
-    // person.firstName = "William";
-    // person.lastName = "Withers";
 
-   // console.log(person);
+    // console.log(person.firstName);
+    // console.log(person.lastName);
+
 
     /**
      * TODO:
@@ -32,13 +32,17 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
-    function sayHello(user) {
-        console.log(`Hello from ${user.firstName} ${user.lastName}!`);
-    }
+    // function sayHello(user) {
+    //     console.log(`Hello from ${user.firstName} ${user.lastName}!`);
+    // }
 
     //sayHello(person);
 
+    person.sayHello = function () {
+        return `Hello from ${this.firstName} ${this.lastName}!`
+    }
 
+    // console.log(person.sayHello());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -63,7 +67,7 @@
     function printShoppers (shopper) {
         shopper.forEach(function (shopper){
 
-            if (shopper.amount >= 200) {
+            if (shopper.amount > 200) {
                 let newBill = '';
 
                 newBill = shopper.amount - (shopper.amount * .12);
