@@ -220,12 +220,7 @@
         bookInfo(array);
     }
 
-
     createBook(books);
     showBookInfo(books);
-
-
-
-
 
 })();
