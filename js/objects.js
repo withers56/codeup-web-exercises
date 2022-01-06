@@ -219,17 +219,11 @@
         let confirmation = true;
 
         do {
-            let newTitle = '';
-            let newFirstName = '';
-            let newLastName = '';
-
-            newTitle = prompt("What is the title?");
-            newFirstName = prompt("What is the authors first name?");
-            newLastName = prompt("What is the authors last name?");
+            let newTitle = prompt("What is the title?");
+            let newFirstName = prompt("What is the authors first name?");
+            let newLastName = prompt("What is the authors last name?");
 
             bookArray.push({title: newTitle, author: {firstName: newFirstName, lastName: newLastName}});
-
-
 
             confirmation = confirm("do you want to add another book?");
         } while (confirmation)
