@@ -66,6 +66,8 @@ cars[1] = {
     make : 'Toyota',
     model : 'Tundra',
     year : 2007,
+    currentSpeed : 0,
+    maxSpeed : 100,
     tires : [
         {
             location: "Right-front",
@@ -80,9 +82,36 @@ cars[1] = {
 
     ]
 };
+// cars[1].honkHorn = function () {
+//     console.log("Honk! Honk!");
+// }
 
+
+
+// cars[1].honkHorn();
 // printCar(cars[0]);
-printCar(cars[0]);
+//printCar(cars[1]);
+
+
+
+cars[1].accelerate = function () {
+    //increase cars speed by 10
+   // console.log("increase this cars speed by 10");
+    if(this.currentSpeed + 10 <= this.maxSpeed) {
+        this.currentSpeed += 10;
+        console.log("Current speed of car is: " + this.currentSpeed);
+    } else console.log("She be breaking");
+}
+
+
+for (let i = 0; i < 11; i++) {
+    cars[1].accelerate();
+}
+
+
+
+
+
 
 //////////////////////////////////////////////////////////////////////////////
 
@@ -113,10 +142,15 @@ movie[0] = {
         firstName : "Jon",
         lastName : "Watts"
     },
-    imdbRating : "8.8 / 10",
+    imdbRating : 8.8,
     academyAwardWin : false,
     genres : ["Action", "Adventure", "Fantasy"]
 };
+
+movie[0].rate = function (rating) {
+    this.myRating = rating;
+}
+
 movie[1] = {
     title : "Forrest Gump",
     year : 1994,
@@ -125,9 +159,12 @@ movie[1] = {
         firstName : "Robert",
         lastName : "Zemeckis"
     },
-    imdbRating : "8.8 / 10",
+    imdbRating : 8.8,
     academyAwardWin : true,
-    genres : ["Drama", "Romance"]
+    genres : ["Drama", "Romance"],
+    rate : function (rating) {
+        this.myRating = rating;
+    }
 }
 
 function printAllMovies (movies) {
@@ -142,6 +179,7 @@ function printMovie (movies) {
     console.log("\tTitle: " + movies.title);
     console.log("\tYear: " + movies.year);
     console.log("\tRating: " + movies.rating);
+    console.log("\tMy rating: " + movies.myRating);
     console.log("\t\tDirector: ");
     printDirector(movies.director);
     console.log("\timdb rating: " + movies.imdbRating);
@@ -162,7 +200,7 @@ function printGenres(movie) {
     }
 }
 
-// printAllMovies(movie);
+
 
 // *** Continuing MINI EXERCISE until lunch ***
 // Change the director member of your movies to an object
@@ -172,4 +210,14 @@ function printGenres(movie) {
 // is one of your movies’ genres from imdb.com
 // and change your printMovie function
 
+// *** last part of MINI EXERCISE ***
+// Add a rate(rating) function to each of your movie objects.
+//     The function takes an int parameter called rating
+// Modify rate(rating) to set a myRating property on that object
+// modify printMovie to display myRating for each movie
+
+movie[0].rate(10);
+movie[1].rate(9.5);
+
+printAllMovies(movie);
 
