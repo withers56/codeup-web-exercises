@@ -59,34 +59,50 @@
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
     ];
+
+    function printShoppers (shopper) {
+        shopper.forEach(function (shopper){
+
+            if (shopper.amount >= 200) {
+                let newBill = '';
+
+                newBill = shopper.amount - (shopper.amount * .12);
+
+                console.log(`${shopper.name} spent ${shopper.amount} at heb, they recieved a discount of 12% and the new total is ${newBill.toFixed(2)}.`);
+            }
+            else console.log(`${shopper.name} spent ${shopper.amount} at heb, they did not recieve a discount.`);
+        })
+    }
+
+    printShoppers(shoppers);
     // console.log(shoppers[0]);
     // let name = shoppers[0];
     // console.log(name.name)
 
-    function hebBill(array) {
-
-        for (let i = 0; i <= shoppers.length -1; i++) {
-            let tempPerson = shoppers[i];
-            let newBill = '';
-            let discount = '';
-
-            if (tempPerson.amount >= 200) {
-                discount = true;
-                newBill = tempPerson.amount - (tempPerson.amount * .12);
-            } else {
-                discount = false;
-                newBill = tempPerson.amount;
-            }
-
-            if (discount) {
-                console.log(`${tempPerson.name} spent ${tempPerson.amount} at heb, they recieved a discount of 12% and the new total is ${newBill.toFixed(2)}.`);
-            } else console.log(`${tempPerson.name} spent ${tempPerson.amount} at heb, they did not recieve a discount.`);
-
-
-        }
-
-    }
-   // hebBill(shoppers);
+    // function hebBill(array) {
+    //
+    //     for (let i = 0; i <= array.length -1; i++) {
+    //         let tempPerson = array[i];
+    //         let newBill = '';
+    //         let discount = '';
+    //
+    //         if (tempPerson.amount >= 200) {
+    //             discount = true;
+    //             newBill = tempPerson.amount - (tempPerson.amount * .12);
+    //         } else {
+    //             discount = false;
+    //             newBill = tempPerson.amount;
+    //         }
+    //
+    //         if (discount) {
+    //             console.log(`${tempPerson.name} spent ${tempPerson.amount} at heb, they recieved a discount of 12% and the new total is ${newBill.toFixed(2)}.`);
+    //         } else console.log(`${tempPerson.name} spent ${tempPerson.amount} at heb, they did not recieve a discount.`);
+    //
+    //
+    //     }
+    //
+    // }
+    //hebBill(shoppers);
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -173,6 +189,8 @@
             console.log(`Author: ${array[i].author.firstName} ${array[i].author.lastName}`);
             console.log("---------------------------");
 
+            alert(`Book number: ${i + 1}\nTitle: ${array[i].title}\nAuthor: ${array[i].author.firstName} ${array[i].author.lastName}`)
+
         }
     }
 //bookInfo(books);
@@ -197,7 +215,7 @@
     // testArray.push({number: 2, color: {c1: 'green', c2: 'yellow'}});
     //alert(testArray[0].number + " " + testArray[0].color);
 
-    function createBook(array) {
+    function createBook(bookArray) {
         let confirmation = true;
 
         do {
@@ -209,7 +227,9 @@
             newFirstName = prompt("What is the authors first name?");
             newLastName = prompt("What is the authors last name?");
 
-            array.push({title: newTitle, author: {firstName: newFirstName, lastName: newLastName}});
+            bookArray.push({title: newTitle, author: {firstName: newFirstName, lastName: newLastName}});
+
+
 
             confirmation = confirm("do you want to add another book?");
         } while (confirmation)
@@ -224,3 +244,5 @@
     showBookInfo(books);
 
 })();
+
+//alert("THis is \n A test to see \n if i can make it big");
