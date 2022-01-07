@@ -104,9 +104,9 @@ cars[1].accelerate = function () {
 }
 
 
-for (let i = 0; i < 11; i++) {
-    cars[1].accelerate();
-}
+// for (let i = 0; i < 11; i++) {
+//     cars[1].accelerate();
+// }
 
 
 
@@ -219,5 +219,71 @@ function printGenres(movie) {
 movie[0].rate(10);
 movie[1].rate(9.5);
 
-printAllMovies(movie);
+// printAllMovies(movie);
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+// min <= x <= max
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min +1) + min);
+}
+
+// console.log(getRandomInt(-50, -.10));
+// console.log(Math.random() * 10);
+
+//1, 2, 3, 4, 5, 6, 7, 8, 9, 10 = 10 - 1 = 9
+//max - min + 1
+// let oneCounter = 0;
+// let twoCounter = 0;
+// let threeCounter = 0;
+// let fourCounter = 0;
+// let fiveCounter = 0;
+// let sixCounter = 0;
+// let sevenCounter = 0;
+// let eightCounter = 0;
+// let nineCounter = 0;
+// let twentyCounter = 0;
+//
+// for (let i = 0; i < 1000; i++) {
+//     let randomNum =Math.ceil(Math.random() * (25));
+//
+//     switch (randomNum){
+//         case 1 : {
+//             oneCounter++;
+//             break;
+//         }
+//         case 2 : {
+//             twoCounter++;
+//             break;
+//         }
+//         case 3 : {
+//             threeCounter++;
+//             break;
+//         }
+//     }
+// }
+
+// console.log(oneCounter);
+// console.log(twoCounter);
+// console.log(threeCounter);
+
+//round 3.14159 -> 3.14
+//3.14159 * 100 = 314.159 -> 314
+// 314 / 100 = 3.14
+// console.log(Math.PI);
+
+//100th
+console.log(Math.round(Math.PI * 1000) / 1000);
+
+console.log(parseFloat(Math.PI.toFixed(3)));
+
+
+
+
+
+
 
