@@ -75,7 +75,7 @@
 
     <hr>
 
-    <video controls width="250">
+    <video controls  width="250" >
         <source src="videos/bunbun.mp4">
     </video>
     <p>Cute bun bun being petted</p>
@@ -87,7 +87,53 @@
 </div>
 
 
+<div>
+    <form method="POST" action="https://request-inspector.glitch.me/">
 
+        <label for="username">Username brah:</label>
+        <input id="username" name="username" type="text">
+        <br>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password">
+        <br>
+
+        <input type="submit">
+    </form>
+</div>
+<hr>
+<div>
+    <form action="https://request-inspector.glitch.me" method="GET">
+        <label for="zipcode">Zipcode</label>
+        <input type="text" name="zipcode" id="zipcode" placeholder="input a zipcode">
+        <button type="submit">Search</button>
+    </form>
+    <a href="https://request-inspector.glitch.me/?zipcode=78255">Search in ZIP Code 78255</a>
+
+    <input type="submit">
+    <button type="submit">Submit the form</button>
+
+
+    <div>
+        <form action="https://request-inspector.glitch.me" method="POST">
+            <label for="username">Username: </label>
+            <input type="text" name="username" id="username" placeholder="username">
+            <button type="submit">send</button>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
 
 
 
