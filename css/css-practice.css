@@ -1,0 +1,16 @@
+.fancy-header-background {
+    color: wheat;
+    background-color: cadetblue;
+}
+.fancy-main-background {
+    color: antiquewhite;
+    background-color: slategray;
+    text-decoration: underline;
+}
+.fancy-footer-background{
+    color: papayawhip;
+    background-color: darkslategray;
+}
+.fancy-body-background {
+    background-color: dimgray;
+}
