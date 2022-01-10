@@ -5,6 +5,42 @@
     <title>Register With Us</title>
 </head>
 <body>
+<h1>Register with us today!</h1>
+<section>
+    <form method="post" action="https://www.elformo.com/forms/8fabb1b6-82eb-41f2-b019-09fc2465f602">
+        <label for="username">Username:</label>
+        <input name="username" id="username">
+        <br>
+        <label for="password">Password:</label>
+        <input name="password" id="password">
+        <br>
+        <label for="bio">Bio: </label>
+        <textarea name="bio" id="bio" maxlength="250"></textarea>
+        <br><br>
 
+        <h2>How did you hear about us?</h2>
+        <label for="billBoard">
+            <input id="billBoard" name="exposure" value="billBoard" type="checkbox">Billboard<br>
+        </label>
+        <label for="radioAd">
+            <input id="radioAd"name="exposure" value="radioAd" type="checkbox">Radio Advertisement<br>
+        </label>
+        <label for="internetAd">
+            <input id="internetAd" name="exposure" value="internetAd" type="checkbox">Internet Advertisement<br>
+        </label>
+        <label for="other">
+            <input id="other" name="exposure" value="other" type="checkbox">Other<br>
+        </label>
+        <h2>Internet Browser</h2>
+        <select name="internet_browser">
+            <option value="chrome">Google Chrome</option>
+            <option value="edge">Microsoft Edge</option>
+            <option value="mozilla">Mozilla Firefox</option>
+            <option value="bing">Bing</option>
+        </select>
+<hr>
+        <button type="submit">Submit</button>
+    </form>
+</section>
 </body>
 </html>
