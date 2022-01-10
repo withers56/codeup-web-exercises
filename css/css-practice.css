@@ -13,4 +13,52 @@
 }
 .fancy-body-background {
     background-color: dimgray;
+    color: aqua;
+}
+
+#container>h1 {
+    color: aqua;
+}
+
+h6.hidden-werds {
+    color: darkslategray;
+}
+/* unvisited link (:link) */
+a:link {
+    color:red;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:black;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:blue;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:green;
+}
+.image-edit{
+
+}
+
+.image-edit:hover {
+    opacity: 0.3;
+}
+
+.square-list {
+
+    list-style-type: georgian;
+}
+
+h5 {
+    color: wheat;
+}
+
+#sidebar h5 {
+    color: inherit;
 }
