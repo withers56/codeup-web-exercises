@@ -1,3 +1,70 @@
 .fancy-header {
-    color: purple;
+    color: aqua;
+}
+
+#our_product_table {
+    width: 50%;
+    border-collapse: collapse;
+}
+
+#our_product_table td, #our_product_table th {
+    border: 1px solid;
+    padding: 5px;
+}
+
+#our_product_table tr:hover {
+    background-color: cadetblue;
+}
+
+#our_product_table th {
+    text-align: left;
+    background-color: darkslategray;
+    color: azure;
+    border-color: black;
+}
+
+#main-heading {
+    text-align: center;
+    background-image: url("/images/clouds.jpg");
+    color: azure;
+    background-size: cover;
+    padding: 20px;
+
+}
+
+#core-values li{
+    list-style: armenian;
+}
+
+#vision li{
+    list-style-type: armenian;
+}
+
+h3 {
+    color: darkslategray;
+    text-decoration: underline;
+}
+
+#main-body {
+    background-color: wheat;
+    font-family: 'The Nautigal', cursive;
+}
+
+a:link {
+    color:red;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:black;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:blue;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:green;
 }
