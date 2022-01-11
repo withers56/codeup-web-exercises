@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#main-heading {
+    padding: 50px;
+    background-color: #161b22;
+}
+
+#main-body {
+    padding: 500px;
+    background-color: #0e1116;
+}
