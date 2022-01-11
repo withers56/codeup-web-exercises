@@ -1,5 +1,11 @@
+
+/*html, body {*/
+/*    margin:0;*/
+/*    padding:0;*/
+/*}*/
+
 .fancy-header {
-    color: aqua;
+    color: #457b9d;
 }
 
 #our_product_table {
@@ -12,21 +18,27 @@
     padding: 5px;
 }
 
+#our_product_table tr {
+    background-color: #f1faee;
+    color: #e63946;
+}
+
 #our_product_table tr:hover {
-    background-color: cadetblue;
+    background-color: #a8dadc;
 }
 
 #our_product_table th {
     text-align: left;
-    background-color: darkslategray;
+    background-color: #1d3557;
     color: azure;
-    border-color: black;
+    border-color: #e63946;
 }
 
 #main-heading {
+
     text-align: center;
     background-image: url("/images/clouds.jpg");
-    color: azure;
+    color: #e63946;
     background-size: cover;
     padding: 20px;
 
@@ -41,12 +53,13 @@
 }
 
 h3 {
-    color: darkslategray;
+    color: #e63946;
     text-decoration: underline;
 }
 
 #main-body {
-    background-color: wheat;
+    background-color: #457b9d;
+    color: #f1faee;
     font-family: 'The Nautigal', cursive;
 }
 
@@ -67,4 +80,10 @@ a:hover {
 /* active/selected link (:active) */
 a:active {
     color:green;
+}
+
+hr {
+    height: 1px;
+    background-color: #1d3557;
+    border: none;
 }
