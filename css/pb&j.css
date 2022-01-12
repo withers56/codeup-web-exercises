@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-image: url("/images/clouds.jpg");
+}
+#container1 {
+    height: 500px;
+    width: 500px;
+    margin:  100px auto;
+}
+.class-deminsions {
+    height: 50px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+.class1-color{
+    background-color: #f1dba6;
+    border: 3px saddlebrown solid;
+}
+.class2-color{
+    color: #c9acfa;
+    background-color: #2d0173;
+    border: 2px solid #160038;
+    border-radius: 30px;
+
+}
+.class3-color{
+    color: #fcd8a6;
+    background-color: #be893f;
+    border: 2px solid #6c4e23;
+    border-radius: 30px;
+
+}
