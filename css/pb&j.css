@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    background-image: url("/images/clouds.jpg");
+
 }
 #container1 {
     height: 500px;
@@ -13,13 +13,17 @@
     width: 100%;
     margin: 0 auto;
     padding: 10px 20px;
+    font-weight: bold;
 }
 .class1-color{
     background-color: #f1dba6;
     border: 3px saddlebrown solid;
+    background-image: url("/images/bread.jpeg");
 }
 .class2-color{
-    color: #c9acfa;
+    color: #ef6cff;
+    background-image: url("/images/grape-jelly.jpeg");
+    background-size: cover;
     background-color: #2d0173;
     border: 2px solid #160038;
     border-radius: 30px;
@@ -27,6 +31,7 @@
 }
 .class3-color{
     color: #fcd8a6;
+    background-image: url("/images/peanut-butter.jpeg");
     background-color: #be893f;
     border: 2px solid #6c4e23;
     border-radius: 30px;
