@@ -339,7 +339,7 @@ function forLoopIterate2(input) {
 // -> logs the first, third, and last elements of that array
 // -Invoke your function and pass favoriteArtists as an argument
 
-let favoriteArtist = ['Metallica', 'Kill switch engage', 'avenge sevenfold', 'soad', '3dd'];
+// let favoriteArtist = ['Metallica', 'Kill switch engage', 'avenge sevenfold', 'soad', '3dd'];
 
 // function arrayLogger(array) {
 //     console.log(array[0]);
@@ -349,11 +349,26 @@ let favoriteArtist = ['Metallica', 'Kill switch engage', 'avenge sevenfold', 'so
 //
 // arrayLogger(favoriteArtist);
 
-favoriteArtist.forEach(function (guitarHero){
-    console.log(guitarHero);
-})
+// favoriteArtist.forEach(function (guitarHero){
+//     console.log(guitarHero);
+// })
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Create a function called arrayToString.
+//     The function takes a parameter called myArray.
+//     It returns a string that is the concatenation of all the elements in myArray.
+//     This function is essentially your own version of join.
+    // Therefore, you cannot use join in your function body :slightly_smiling_face:
+let someArray = ["this", "is", "a", "test", "array"]
 
+function arrayToString (myArray){
+    let myString = '';
+    for (let i = 0; i < myArray.length; i++) {
+        myString = myString.concat(myArray[i] + " ");
+    }
+    return myString;
+}
 
+console.log(arrayToString(someArray));
 
 
 
