@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox in practice</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+        }
+        nav {
+            background: #333333;
+            padding: 1em;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-family: Verdana;
+            padding: 1em;
+        }
+        nav ul li:nth-child(4){
+            margin-left: auto;
+        }
+        nav a:hover {
+            opacity: .3;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+</nav>
+</body>
+</html>
