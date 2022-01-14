@@ -1,4 +1,4 @@
-@media screen and (min-width:375px) {
+@media screen and (min-width:0px) {
     .alert-info {
         width: 100%;
         border: 1px solid rgba(0, 0, 0, 0.5);
@@ -6,26 +6,127 @@
         display: flex;
         justify-content: center;
     }
+
     .alert-info a {
         padding: 1em;
         text-decoration: none;
         color: rgba(0, 0, 0, 0.71);
     }
-    .header-img {
 
-
-
-    }
     .header-img img {
         width: 100%;
     }
+
     h1 {
         text-align: center;
     }
+
+    .nav-links {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .nav-links li {
+        padding: 1em;
+        text-align: center;
+        background-color: rgba(105, 105, 105, 0.35);
+        margin: 1em;
+    }
+    #social-media-links {
+        display: flex;
+        justify-content: flex-end;
+
+    }
+
+    #social-media-links a {
+        padding: 0 1em;
+    }
+
+    #social-media-links img {
+        max-width: 2em;
+        max-height: 2em;
+    }
+    a:hover {
+        opacity: .7;
+    }
+    a {
+        color: blue;
+    }
 }
 
-@media screen and (min-width:700px) {
-    .alert-info {
-        border: 1px solid #af0000;
+@media screen and (min-width:800px) {
+
+    .hidden-on-desktop {
+        display: none;
+    }
+
+    h1 {
+        top: 1em;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+    }
+
+    a {
+        color: blue;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style-type: none;
+        justify-content: flex-end;
+        /*background-color: white;*/
+        padding: 2em 0;
+    }
+
+    .nav-links li {
+        padding: 0 1em;
+        background-color: white;
+    }
+
+    .header-img {
+        margin: 1em;
+    }
+
+    .header-img img {
+        width: 100%;
+    }
+
+    #text-section {
+        display: flex;
+        /*border: 1px solid black;*/
+        justify-content: space-between;
+        margin: 0 1em;
+    }
+
+    .main {
+        /*border: 1px solid black;*/
+        width: 60%;
+        height: 15em;
+    }
+
+    .sub-section {
+        /*border: 1px solid black;*/
+        width: 30%;
+        height: 25em;
+    }
+
+    footer p {
+        margin-left: 1em;
+    }
+
+    #social-media-links {
+        display: flex;
+        justify-content: flex-end;
+
+    }
+
+    #social-media-links a {
+        padding: 0 1em;
+    }
+
+    #social-media-links img {
+        max-width: 2em;
+        max-height: 2em;
     }
 }
