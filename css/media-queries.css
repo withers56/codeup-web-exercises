@@ -1,0 +1,31 @@
+@media screen and (min-width:375px) {
+    .alert-info {
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 255, 235, 0.44);
+        display: flex;
+        justify-content: center;
+    }
+    .alert-info a {
+        padding: 1em;
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.71);
+    }
+    .header-img {
+
+
+
+    }
+    .header-img img {
+        width: 100%;
+    }
+    h1 {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width:700px) {
+    .alert-info {
+        border: 1px solid #af0000;
+    }
+}
