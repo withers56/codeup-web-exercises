@@ -2,49 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Flexbox in practice</title>
+    <title>Flexbox Basics Examples</title>
     <style>
         * {
             box-sizing: border-box;
         }
         body {
             margin: 0;
+            font-family: Helvetica;
+            font-weight: bold;
+            font-size: larger;
+            color: #00ffeb;
         }
-        nav {
-            background: #333333;
-            padding: 1em;
+        #main-flex-container {
+            display: flex;
+            width: 100%;
+            border: 2px solid black;
+            justify-content: space-evenly;
         }
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .flex-container {
+            width: 33%;
+            border: 3px solid goldenrod;
             display: flex;
         }
-        nav a {
-            text-decoration: none;
-            color: white;
-            font-family: Verdana;
+        .flex-item {
+            background: #000000;
+            border: 2px solid #F9EFD6;
             padding: 1em;
+            width: 33.33%;
+            height: 250px;
+            text-align: center;
+            vertical-align: center;
+            line-height: 200px;
         }
-        nav ul li:nth-child(3){
-            margin-left: auto;
-        }
-        nav ul li:nth-child(4){
-            margin-left: auto;
-        }
-        nav a:hover {
-            opacity: .3;
+        .flex-item:hover {
+            background-image: url("images/beach.jpg");
+            background-size: cover;
         }
     </style>
 </head>
 <body>
-<nav>
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">News</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">About</a></li>
-    </ul>
-</nav>
+<main id="main-flex-container">
+    <div class="flex-container">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+    </div>
+    <div class="flex-container">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+    </div>
+    <div class="flex-container">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+    </div>
+</main>
+
+
 </body>
 </html>
