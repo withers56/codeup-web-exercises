@@ -380,22 +380,41 @@ function forLoopIterate2(input) {
 // removeAll(bugs, "mosquito") should return ["ant", "scorpion", "ant", "ant", "typo", "reference error", "type error"]
 // removeAll(bugs, "roach") should return the original array b/c “roach” has no occurrances.
 
-var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
+// var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
+//
+// function removeAll(array, value) {
+//     let tempArray = [];
+//     for (let i = 0; i < array.length; i++) {
+//
+//         if (value !== array[i]) {
+//             tempArray.push(array[i]);
+//         }
+//     }
+//     return tempArray;
+// }
+//
+// console.log(removeAll(bugs, "ant"));
+// console.log(removeAll(bugs, "mosquito"));
+// console.log(removeAll(bugs, "roach"));
 
-function removeAll(array, value) {
-    let tempArray = [];
-    for (let i = 0; i < array.length; i++) {
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        if (value !== array[i]) {
-            tempArray.push(array[i]);
+function sumOfNums(int1, int2) {
+   let sum = 0;
+    if (int1 < int2) {
+        for (let i = int1; i <= int2 ; i++) {
+            sum = sum + i;
+        }
+    } else {
+        for (let i = int2; i <= int1 ; i++) {
+            sum = sum + i;
         }
     }
-    return tempArray;
+   return sum;
 }
 
-console.log(removeAll(bugs, "ant"));
-console.log(removeAll(bugs, "mosquito"));
-console.log(removeAll(bugs, "roach"));
+console.log(sumOfNums(0, -1));
+console.log(sumOfNums(5, 1));
 
 
 
