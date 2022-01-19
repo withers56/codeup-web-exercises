@@ -12,9 +12,13 @@
         text-decoration: none;
         color: rgba(0, 0, 0, 0.71);
     }
+    .header-img {
+        display: flex;
+        justify-content: center;
+    }
 
     .header-img img {
-        width: 100%;
+        width: 90%;
     }
 
     h1 {
@@ -61,10 +65,11 @@
     }
 
     h1 {
-        top: 1em;
+        /*display: inline-block;*/
         padding: 0;
         margin: 0;
-        position: absolute;
+        float: left;
+
     }
 
     .nav-links {

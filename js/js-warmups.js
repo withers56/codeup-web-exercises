@@ -415,30 +415,33 @@ function forLoopIterate2(input) {
 //
 // console.log(sumOfNums(0, -1));
 // console.log(sumOfNums(5, 1));
+// console.log(sumOfNums(1,5));
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-var myCats = [
-    {
-        catName: "Fifi",
-        age: 5
-    },
-    {
-        catName: "Fluffy",
-        age: 3
-    },
-    {
-        catName: "Abby",
-        age: 7
-    }
-];
-
-function getNthCat (myCats, n) {
-    return myCats[n];
-}
-
-// print out the cat at index 1
-console.log(getNthCat(myCats, 1));
+// var myCats = [
+//     {
+//         catName: "Fifi",
+//         age: 5
+//     },
+//     {
+//         catName: "Fluffy",
+//         age: 3
+//     },
+//     {
+//         catName: "Abby",
+//         age: 7
+//     }
+// ];
+//
+// function getNthCat (myCats, n) {
+//     return myCats[n];
+// }
+//
+// // print out the cat at index 1
+// console.log(getNthCat(myCats, 0));
+// console.log(getNthCat(myCats, 1));
+// console.log(getNthCat(myCats, 2));
 
 
 
