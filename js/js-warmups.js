@@ -399,24 +399,46 @@ function forLoopIterate2(input) {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function sumOfNums(int1, int2) {
-   let sum = 0;
-    if (int1 < int2) {
-        for (let i = int1; i <= int2 ; i++) {
-            sum = sum + i;
-        }
-    } else {
-        for (let i = int2; i <= int1 ; i++) {
-            sum = sum + i;
-        }
+// function sumOfNums(int1, int2) {
+//    let sum = 0;
+//     if (int1 < int2) {
+//         for (let i = int1; i <= int2 ; i++) {
+//             sum = sum + i;
+//         }
+//     } else {
+//         for (let i = int2; i <= int1 ; i++) {
+//             sum = sum + i;
+//         }
+//     }
+//    return sum;
+// }
+//
+// console.log(sumOfNums(0, -1));
+// console.log(sumOfNums(5, 1));
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+var myCats = [
+    {
+        catName: "Fifi",
+        age: 5
+    },
+    {
+        catName: "Fluffy",
+        age: 3
+    },
+    {
+        catName: "Abby",
+        age: 7
     }
-   return sum;
+];
+
+function getNthCat (myCats, n) {
+    return myCats[n];
 }
 
-console.log(sumOfNums(0, -1));
-console.log(sumOfNums(5, 1));
-
-
+// print out the cat at index 1
+console.log(getNthCat(myCats, 1));
 
 
 
