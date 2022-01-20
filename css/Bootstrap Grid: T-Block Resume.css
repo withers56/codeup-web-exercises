@@ -1,0 +1,54 @@
+body {
+    background-color: #0d1117;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+hr {
+    background-color: #3357ff;
+    height: 5px;
+}
+
+h4 {
+    font-weight: bold;
+
+}
+
+.name-heading-text-size {
+    font-size: 2em;
+    width: 100%;
+}
+.job-position-text-size {
+    font-size: 1.25em;
+}
+.contact-list {
+    list-style-type: none;
+    text-align: center;
+}
+
+.heading-color {
+    color: white;
+}
+
+
+@media screen and (min-width: 768px){
+
+    .contact-list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .name-heading-text-size {
+        font-size: 3em;
+        width: 100%;
+    }
+
+    .job-position-text-size {
+        font-size: 1.75em;
+    }
+
+    .main-body {
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
