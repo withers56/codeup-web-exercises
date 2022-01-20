@@ -219,7 +219,7 @@ function printGenres(movie) {
 movie[0].rate(10);
 movie[1].rate(9.5);
 
-// printAllMovies(movie);
+printAllMovies(movie);
 
 
 
@@ -228,9 +228,9 @@ movie[1].rate(9.5);
 /////////////////////////////////////////////////////////////////////////////
 
 // min <= x <= max
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min +1) + min);
-}
+// function getRandomInt(min, max) {
+//     return Math.floor(Math.random() * (max - min +1) + min);
+// }
 
 // console.log(getRandomInt(-50, -.10));
 // console.log(Math.random() * 10);
@@ -277,9 +277,9 @@ function getRandomInt(min, max) {
 // console.log(Math.PI);
 
 //100th
-console.log(Math.round(Math.PI * 1000) / 1000);
-
-console.log(parseFloat(Math.PI.toFixed(3)));
+// console.log(Math.round(Math.PI * 1000) / 1000);
+//
+// console.log(parseFloat(Math.PI.toFixed(3)));
 
 
 
