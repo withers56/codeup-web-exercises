@@ -2,8 +2,11 @@ body {
     background-color: lightgrey;
     font-family: 'Abel', sans-serif;
 }
+.main-nav-bar {
+    max-width: 1440px;
+    margin: auto;
+}
 .nav-container {
-
 
 }
 
@@ -39,7 +42,7 @@ body {
 
 }
 .nav-list li {
-    font-size: .75em;
+    font-size: 1em;
     text-align: center;
 }
 
@@ -70,17 +73,24 @@ body {
         margin: 0;
         padding-left: .5em;
     }
+    .nav-list li {
+        font-size: 1em;
+    }
 
     .left-nav {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
         padding: 0;
     }
     .right-nav {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         padding: 0;
     }
+}
+
+@media screen and (min-width: 992px){
+
 }
