@@ -1,14 +1,26 @@
 .jumbotron {
-    background-image: url("/images/pizza-image.png");
-    display: flex;
-    padding: 4em 0;
-}
-.jumbotron h1 {
-    background-color: rgba(255, 255, 255, 0.55);
-    width: 100%;
-    text-align: center;
-    color: rgba(0, 0, 0, 0.68);
+    display: none;
 }
 
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
 
+@media screen and (min-width: 768px) {
+    /*.container-fluid {*/
+    /*    display: in;*/
+    /*}*/
+    .jumbotron {
+        background-image: url("/images/pizza-image.png");
+        display: flex;
+        padding: 4em 0;
+    }
+    .jumbotron h1 {
+        background-color: rgba(255, 255, 255, 0.55);
+        width: 100%;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.68);
+    }
+}
 
