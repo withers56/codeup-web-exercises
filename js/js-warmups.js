@@ -443,8 +443,19 @@ function forLoopIterate2(input) {
 // console.log(getNthCat(myCats, 1));
 // console.log(getNthCat(myCats, 2));
 
+////////////////////////////////////////////////////////
 
+function narcissistic(value) {
+    let valueToString = "" + value;
+    let valueDigits = ("" + value).length;
+    let tempValue= 0;
 
+    for (let i = 0; i < valueDigits; i++) {
+        tempValue = tempValue + (Math.pow(parseInt(valueToString.charAt(i)), 3));
+    }
+    return tempValue === value;
+}
 
+console.log(narcissistic(1652));
 
 
