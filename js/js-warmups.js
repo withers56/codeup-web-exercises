@@ -445,17 +445,39 @@ function forLoopIterate2(input) {
 
 ////////////////////////////////////////////////////////
 
-function narcissistic(value) {
-    let valueToString = "" + value;
-    let valueDigits = ("" + value).length;
-    let tempValue= 0;
+// function narcissistic(value) {
+//     let valueToString = "" + value;
+//     let valueDigits = ("" + value).length;
+//     let tempValue= 0;
+//
+//     for (let i = 0; i < valueDigits; i++) {
+//         tempValue = tempValue + (Math.pow(parseInt(valueToString.charAt(i)), 3));
+//     }
+//     return tempValue === value;
+// }
+//
+// // console.log(narcissistic(1652));
+//
+// function numbersThroughN(value) {
+//     for (let i = 0; i <= value; i++) {
+//         if (narcissistic(i) === true) {
+//             console.log(i + " Is narcissistic");
+//         }
+//     }
+// }
+//
+// numbersThroughN(500);
 
-    for (let i = 0; i < valueDigits; i++) {
-        tempValue = tempValue + (Math.pow(parseInt(valueToString.charAt(i)), 3));
-    }
-    return tempValue === value;
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Write a function called reverseString that takes in a string
+// and returns a string that has the characters of the original string in reverse order.
+//     example: reverseString('hello') - returns 'olleh'
+
+function reverseString(myString) {
+    myString = myString.split("");
+    myString.reverse();
+    console.log(myString.join(''));
 }
 
-console.log(narcissistic(1652));
-
-
+reverseString("hello");
