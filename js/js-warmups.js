@@ -474,10 +474,28 @@ function forLoopIterate2(input) {
 // and returns a string that has the characters of the original string in reverse order.
 //     example: reverseString('hello') - returns 'olleh'
 
-function reverseString(myString) {
-    myString = myString.split("");
-    myString.reverse();
-    console.log(myString.join(''));
+// function reverseString(myString) {
+//     myString = myString.split("");
+//     myString.reverse();
+//     console.log(myString.join(''));
+// }
+//
+// reverseString("hello");
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Write a function called findAverage that takes in an array of integers representing grades and returns the average.
+//     Example input: [95, 74, 86, 100]
+// Example output: 88.75
+
+
+function findAverage (numArray) {
+    let sum = 0;
+
+    numArray.forEach(function (number) {
+        sum += number
+    })
+    return (sum / numArray.length);
 }
 
-reverseString("hello");
+console.log(findAverage([95, 74, 86, 100]));
+console.log(findAverage([93.64, 99, 97, 92]));

@@ -8,6 +8,7 @@
 <button id="btn1">Click Me!</button>
 <button id="btn2">Remove Event Listener</button>
 <button id="btn3">Add Event Listener</button>
+<button id="btn4">Refresh page</button>
 <script>
     'use strict';
 
@@ -37,6 +38,12 @@
     var btn3 = document.getElementById('btn3');
     btn3.addEventListener('click',add)
 
+    var refreshPage = function (event) {
+        location.reload();
+    }
+
+    var btn4 = document.getElementById('btn4');
+    btn4.addEventListener('click', refreshPage)
 </script>
 </body>
 </html>

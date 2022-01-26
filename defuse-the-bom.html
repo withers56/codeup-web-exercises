@@ -3,24 +3,39 @@
 <head>
     <meta charset="utf-8">
     <title>Defuse the BOM</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
 
-<h2 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h2>
-<button id="defuser">Defuse the BOM</button>
+
+
+<main>
+    <h2 id="message">This <span><i class="fas fa-bomb"></i></span> will self destruct in <span id="timer">5</span> seconds...</h2>
+    <button id="defuser">Defuse the BOM</button>
+</main>
+
+
+
+
+
 
 <script>
 (function() {
     "use strict";
 
-    var detonationTimer = 10000;
-    var miliseconds = 1;
-
+    var detonationTimer = 3;
+    var miliseconds = 1000;
+    let bodyElement = document.getElementsByTagName('body')[0];
+    let bomElement = document.getElementsByClassName('defuseBom');
+    console.log(bomElement);
     // TODO: This function needs to be called once every second
     var bombId = setInterval (function updateTimer() {
         if (detonationTimer == 0) {
-            alert('EXTERMINATE!');
+
+            bodyElement.style.backgroundColor = 'red';
             document.body.innerHTML = '';
+            // alert('EXTERMINATE!');
+
         } else if (detonationTimer > 0) {
             document.getElementById('timer').innerHTML = detonationTimer;
         }
@@ -32,8 +47,10 @@
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
         // document.getElementById('message').innerHTML = 'Defused!'
-        alert('Defused!');
         clearTimeout(bombId);
+        bodyElement.style.backgroundColor = '#00ff00';
+        document.body.innerHTML = '';
+        // alert('Defused!');
     }
 
     // Don't modify anything below this line!
