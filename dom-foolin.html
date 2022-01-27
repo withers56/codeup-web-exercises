@@ -3,14 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <title>Dom</title>
+    <style>
+
+        .pop-up {
+            width: 25%;
+            height: 150px;
+            border: 1px solid black;
+            margin: auto;
+            text-align: center;
+            display: none;
+            overflow: visible;
+        }
+
+
+
+
+
+
+
+
+
+    </style>
 </head>
 <body>
 <button id="btn1">Click Me!</button>
 <button id="btn2">Remove Event Listener</button>
 <button id="btn3">Add Event Listener</button>
 <button id="btn4">Refresh page</button>
+
+
+
+<p class="text">test text</p>
+<form id="p-update">
+    <label for="input">
+        <input type="text" name="input" id="input">
+    </label>
+    <input class="btn-x" type="button" placeholder="press">
+</form>
+
+<div class="pop-up">
+    ADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADDADD
+</div>
+
+
 <script>
     'use strict';
+
+
+    function logInput() {
+
+        firstP.innerText = input.value;
+    }
+
+    
+    // let inputInterval = setInterval(logInput,1000);
+    
+    
+    let firstP = document.querySelector('p');
+
+    let input = document.querySelector('#input');
+    let btnX = document.querySelector('.btn-x')
+    btnX.addEventListener('click', logInput )
+    // console.log(input.value)
 
     var listener = function (event) {
         alert('You clicked the button!');
@@ -39,11 +93,25 @@
     btn3.addEventListener('click',add)
 
     var refreshPage = function (event) {
-        location.reload();
+        console.log('moved pointer onto refresh button')
     }
 
     var btn4 = document.getElementById('btn4');
-    btn4.addEventListener('click', refreshPage)
+    btn4.addEventListener('mouseenter', refreshPage);
+
+
+
+
+    let displayAd = function () {
+        let popUp = document.querySelector('.pop-up');
+        popUp.style.display = 'block';
+    }
+
+    let adTimeout = setTimeout(displayAd, 5000);
+
+
+
+
 </script>
 </body>
 </html>

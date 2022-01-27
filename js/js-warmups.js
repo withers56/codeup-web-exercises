@@ -488,14 +488,32 @@ function forLoopIterate2(input) {
 // Example output: 88.75
 
 
-function findAverage (numArray) {
-    let sum = 0;
+// function findAverage (numArray) {
+//     let sum = 0;
+//
+//     numArray.forEach(function (number) {
+//         sum += number
+//     })
+//     return (sum / numArray.length);
+// }
+//
+// console.log(findAverage([95, 74, 86, 100]));
+// console.log(findAverage([93.64, 99, 97, 92]));
 
-    numArray.forEach(function (number) {
-        sum += number
-    })
-    return (sum / numArray.length);
+
+
+
+
+// morning JS warmup:
+//     write a function called sumOfSquares(a, b)
+// takes 2 parameters called a and b
+// returns the sum of the squares of a and b
+// i.e., (a to the power of 2) + (b to the power of 2)
+// e.g., console.log(sumOfSquares(2, 3));
+// will return 13
+
+function sumOfSquares(a, b) {
+    return Math.pow(a, 2) + Math.pow(b, 2);
 }
 
-console.log(findAverage([95, 74, 86, 100]));
-console.log(findAverage([93.64, 99, 97, 92]));
+console.log(sumOfSquares(3, 2));
