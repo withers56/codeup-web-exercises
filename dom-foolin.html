@@ -13,10 +13,16 @@
             text-align: center;
             display: none;
             overflow: visible;
+            background: ;
         }
 
 
-
+        .text {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 20%;
+            border: 1px solid black;
+        }
 
 
 
@@ -33,7 +39,7 @@
 
 
 
-<p class="text">test text</p>
+<div class="text">test text</div>
 <form id="p-update">
     <label for="input">
         <input type="text" name="input" id="input">
@@ -59,7 +65,7 @@
     // let inputInterval = setInterval(logInput,1000);
     
     
-    let firstP = document.querySelector('p');
+    let firstP = document.querySelector('.text');
 
     let input = document.querySelector('#input');
     let btnX = document.querySelector('.btn-x')
@@ -109,7 +115,11 @@
 
     let adTimeout = setTimeout(displayAd, 5000);
 
+    function windowClicked() {
+        console.log('CLicked window');
+    }
 
+    window.addEventListener('click', windowClicked);
 
 
 </script>

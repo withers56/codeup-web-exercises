@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Button</title>
+</head>
+<body>
+
+<button id="special-button" style="background-color: #40E0D0; border: 1px solid #b7fcf5"></button>
+
+
+<script>
+    var specialBtn = document.querySelector('#special-button');
+    var pageBody = document.querySelector('body');
+
+    pageBody.style.backgroundColor = 'black';
+
+
+    specialBtn.style.position = 'absolute';
+    specialBtn.style.top = '325px';
+    specialBtn.style.left = '635px';
+    specialBtn.style.height = '30px';
+    specialBtn.style.width = '30px';
+
+    function randomMovment() {
+
+        var verticalMovment = Math.ceil(Math.random()*675);
+        var horizontalMovment = Math.ceil(Math.random()*1270);
+
+        console.log("Button Moved up/down " + verticalMovment + "px");
+        console.log("Button Moved left/right " + horizontalMovment + 'px');
+
+        specialBtn.style.top = verticalMovment + "px";
+        specialBtn.style.left = horizontalMovment + 'px';
+    }
+
+    specialBtn.addEventListener('mouseover', randomMovment);
+
+    function btnClicked () {
+        alert("You did it!");
+        pageBody.style.backgroundImage = "url('images/gif.gif')";
+        pageBody.style.backgroundPosition = 'center';
+    }
+
+    specialBtn.addEventListener('click', btnClicked);
+
+</script>
+</body>
+</html>
