@@ -19,17 +19,20 @@
 
     function startGame () {
         gameArea.start();
-        gamePiece = new component(30, 30, 'blue', 10, 160);
+        gamePiece = new component(30, 30, '#20c20e', 10, 160);
     }
 
 var gameArea = {
         canvas : document.createElement('canvas'),
         start : function () {
-            this.canvas.width = 500;
-            this.canvas.height = 400;
+            this.canvas.width = 1293;
+            this.canvas.height = 675;
             this.context = this.canvas.getContext('2d');
             document.body.insertBefore(this.canvas, document.body.childNodes[0]);
             this.interval = setInterval(updateGameArea, 20);
+            window.addEventListener('keydown', move);
+
+
         },
         clear : function () {
             this.context.clearRect( 0, 0, this.canvas.width, this.canvas.height)
@@ -40,6 +43,8 @@ var gameArea = {
 function component (width, height, color, x, y) {
         this.width = width;
         this.height = height;
+        this.speedX = 0;
+        this.speedY = 0;
         this.x = x;
         this.y = y;
         this.update = function () {
@@ -47,13 +52,75 @@ function component (width, height, color, x, y) {
             ctx.fillStyle = color;
             ctx.fillRect(this.x, this.y, this.width, this.height);
         }
+        this.newPos = function () {
+            this.x += this.speedX;
+            this.y += this.speedY;
+        }
 }
+
+    function test (event) {
+        console.log(event.code);
+    }
+
+    function move (event) {
+        if (event.code === "KeyW") {
+            gamePiece.speedY -= 1;
+        }
+        else if (event.code === "KeyX") {
+            gamePiece.speedY += 1;
+        }
+        else if (event.code === "KeyA") {
+            gamePiece.speedX -= 1;
+        }
+        else if (event.code === "KeyD") {
+            gamePiece.speedX += 1;
+        }
+        else if (event.code === "KeyQ") {
+            gamePiece.speedX -= 1;
+            gamePiece.speedY -= 1;
+        }
+        else if (event.code === "KeyE") {
+            gamePiece.speedX += 1;
+            gamePiece.speedY -= 1;
+        }
+        else if (event.code === "KeyZ") {
+            gamePiece.speedX -= 1;
+            gamePiece.speedY += 1;
+        }
+        else if (event.code === "KeyC") {
+            gamePiece.speedX += 1;
+            gamePiece.speedY += 1;
+        }
+        else if (event.code === 'KeyS') {
+            gamePiece.speedX = 0;
+            gamePiece.speedY = 0;
+        }
+    }
+
+
+
+
+    function movedown() {
+        gamePiece.speedY += .05;
+    }
+
+    function moveleft() {
+        gamePiece.speedX -= 1;
+    }
+
+    function moveright() {
+        gamePiece.speedX += 1;
+    }
 
 function updateGameArea() {
         gameArea.clear();
-        // gamePiece.x += 1;
+
+
+
+        gamePiece.newPos();
         gamePiece.update();
 }
+
 
 </script>
 </body>
