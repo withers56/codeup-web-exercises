@@ -1,60 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>test</title>
-    <link rel="stylesheet" href="/css/test.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style>
+        .coffeeBox {
+            font-weight: bold;
+            font-size: 24px;
+            padding: 1em;
+            text-align: center;
+        }
+        .roastFont {
+            opacity: .3;
+            font-size: 12px;
+        }
+
+    </style>
 </head>
 <body>
-    <header id="main-heading">
-        <a href="https://github.com">
-            <img class="github-logo-main" src="images/githublogo.png" alt="mainpage">
-        </a>
-        <div id="top-search-area">
 
-            <label for="search">
-                <input type="text" name="search" id="search" placeholder="Search or jump to...">
-            </label>
-
-            <div >
-                <ul>
-                    <li class="top-header-links"><a class="top-header-links-color" href="https://github.com/pulls">Pull requests</a></li>
-                    <li class="top-header-links"><a class="top-header-links-color" href="https://github.com/issues">Issues</a></li>
-                    <li class="top-header-links"><a class="top-header-links-color" href="https://github.com/marketplace">Marketplace</a></li>
-                    <li class="top-header-links"><a class="top-header-links-color" href="https://github.com/explore">Explore</a></li>
-                </ul>
-                <a href="https://github.com/notifications">
-                    <img class="bellicon" src="/images/bell-icon.png" alt="bell">
-                </a>
-
-                <a href="#">
-                    <img class="bellicon" src="/images/bellplaceholder.svg" alt="bell">
-                </a>
-
-                <a href="https://github.com/notifications">
-                    <img class="bellicon" src="/images/bellplaceholder.svg" alt="bell">
-                </a>
-
-
-
+<div class="container border">
+    <div class="row">
+        <div class="coffee-list col-6 row"></div>
+        <form class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <h6>Coffee Name</h6>
+                    <input type="text" id="name-input">
                 </div>
-
+                <div class="card-body ">
+                    <h6>Roast</h6>
+                    <select id="roast-selection">
+                        <option>light</option>
+                        <option>medium</option>
+                        <option>dark</option>
+                    </select>
+                    <input type="submit" id="submit" class="btn btn-primary">
+                </div>
             </div>
 
-
-        </div>
-
-
-
-    </header>
-    <main id="main-body">
-    <div>
+        </form>
 
     </div>
-    </main>
-    <footer id="main-footer">
 
-    </footer>
 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script>
+
+    var coffees = [
+        {id: 1, name: 'Light City', roast: 'light'},
+        {id: 2, name: 'Half City', roast: 'light'},
+        {id: 3, name: 'Cinnamon', roast: 'light'},
+        {id: 4, name: 'City', roast: 'medium'},
+        {id: 5, name: 'American', roast: 'medium'},
+        {id: 6, name: 'Breakfast', roast: 'medium'},
+        {id: 7, name: 'High', roast: 'dark'},
+        {id: 8, name: 'Continental', roast: 'dark'},
+        {id: 9, name: 'New Orleans', roast: 'dark'},
+        {id: 10, name: 'European', roast: 'dark'},
+        {id: 11, name: 'Espresso', roast: 'dark'},
+        {id: 12, name: 'Viennese', roast: 'dark'},
+        {id: 13, name: 'Italian', roast: 'dark'},
+        {id: 14, name: 'French', roast: 'dark'},
+    ];
+
+
+
+    // let coffeeNameArray = [];
+    // let coffeeFilteredArray = [];
+    let coffeeList = document.querySelector('.coffee-list');
+
+    printArray(coffees);
+
+    //Takes coffees array and filters out the name from each object in array, stores them in array called coffeesNameArray
+    // function filterOutCoffeeNames (coffeeArray) {
+    //     for (let i = 0; i < coffees.length; i++) {
+    //         coffeeNameArray.push(coffeeArray[i].name);
+    //     }
+    // }
+    // filterOutCoffeeNames(coffees);
+
+// Filters through the coffee names, if name matches the input on the html it will get stored in tempArray
+    function filterCoffeeByName(event) {
+        event.preventDefault();
+        let tempArray = [];
+
+        for (let i = 0; i < coffees.length; i++) {
+
+            if (coffees[i].name.toLowerCase().includes(inputValue.value.toLowerCase()) === true) {
+                tempArray.push({'name' : coffees[i].name, 'roast' : coffees[i].roast});
+            }
+        }
+        coffeeList.innerHTML = printArray(tempArray) ;
+    }
+
+
+// Clears the inner html of div, prints out each element of the array as a string. returns the updated div html text
+    function printArray(myArray) {
+        //
+        coffeeList.innerHTML = '';
+        for (let i = 0; i < myArray.length; i++) {
+            coffeeList.innerHTML += "<div class='coffeeBox col-5 '>" + myArray[i].name + " " + "<span class='roastFont'>" + myArray[i].roast + "</span>" + "</div>";
+        }
+        return coffeeList.innerHTML;
+    }
+
+// Creates variable for the input bar on the html and creates the eventlistener
+    let inputValue = document.querySelector('#name-input');
+    let btn = document.querySelector('#submit');
+    btn.addEventListener('click', filterCoffeeByName)
+    inputValue.addEventListener('keyup', filterCoffeeByName);
+
+
+
+</script>
 </body>
 </html>

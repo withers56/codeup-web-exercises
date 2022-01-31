@@ -512,8 +512,49 @@ function forLoopIterate2(input) {
 // e.g., console.log(sumOfSquares(2, 3));
 // will return 13
 
-function sumOfSquares(a, b) {
-    return Math.pow(a, 2) + Math.pow(b, 2);
+// function sumOfSquares(a, b) {
+//     return Math.pow(a, 2) + Math.pow(b, 2);
+// }
+//
+// console.log(sumOfSquares(3, 2));
+///////////////////////////////////////////////////////////////////////////////////////
+
+var coffees = [
+    {id: 1, name: 'Light City', roast: 'light'},
+    {id: 2, name: 'Half City', roast: 'light'},
+    {id: 3, name: 'Cinnamon', roast: 'light'},
+    {id: 4, name: 'City', roast: 'medium'},
+    {id: 5, name: 'American', roast: 'medium'},
+    {id: 6, name: 'Breakfast', roast: 'medium'},
+    {id: 7, name: 'High', roast: 'dark'},
+    {id: 8, name: 'Continental', roast: 'dark'},
+    {id: 9, name: 'New Orleans', roast: 'dark'},
+    {id: 10, name: 'European', roast: 'dark'},
+    {id: 11, name: 'Espresso', roast: 'dark'},
+    {id: 12, name: 'Viennese', roast: 'dark'},
+    {id: 13, name: 'Italian', roast: 'dark'},
+    {id: 14, name: 'French', roast: 'dark'},
+];
+
+console.log(coffees[0].id);
+
+let coffeeNameArray = [];
+let coffeeFilteredArray = [];
+let typedString = 'B'
+
+for (let i = 0; i < coffees.length; i++) {
+    // console.log(coffees[i].name);
+    coffeeNameArray.push(coffees[i].name);
+}
+let tempArray = [];
+for (let i = 0; i < coffeeNameArray.length; i++) {
+
+    if (coffeeNameArray[i].includes(typedString) === true) {
+        tempArray.push(coffeeNameArray[i]);
+        console.log(tempArray);
+    }
 }
 
-console.log(sumOfSquares(3, 2));
+
+
+
