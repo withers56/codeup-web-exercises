@@ -519,42 +519,92 @@ function forLoopIterate2(input) {
 // console.log(sumOfSquares(3, 2));
 ///////////////////////////////////////////////////////////////////////////////////////
 
-var coffees = [
-    {id: 1, name: 'Light City', roast: 'light'},
-    {id: 2, name: 'Half City', roast: 'light'},
-    {id: 3, name: 'Cinnamon', roast: 'light'},
-    {id: 4, name: 'City', roast: 'medium'},
-    {id: 5, name: 'American', roast: 'medium'},
-    {id: 6, name: 'Breakfast', roast: 'medium'},
-    {id: 7, name: 'High', roast: 'dark'},
-    {id: 8, name: 'Continental', roast: 'dark'},
-    {id: 9, name: 'New Orleans', roast: 'dark'},
-    {id: 10, name: 'European', roast: 'dark'},
-    {id: 11, name: 'Espresso', roast: 'dark'},
-    {id: 12, name: 'Viennese', roast: 'dark'},
-    {id: 13, name: 'Italian', roast: 'dark'},
-    {id: 14, name: 'French', roast: 'dark'},
-];
+// var coffees = [
+//     {id: 1, name: 'Light City', roast: 'light'},
+//     {id: 2, name: 'Half City', roast: 'light'},
+//     {id: 3, name: 'Cinnamon', roast: 'light'},
+//     {id: 4, name: 'City', roast: 'medium'},
+//     {id: 5, name: 'American', roast: 'medium'},
+//     {id: 6, name: 'Breakfast', roast: 'medium'},
+//     {id: 7, name: 'High', roast: 'dark'},
+//     {id: 8, name: 'Continental', roast: 'dark'},
+//     {id: 9, name: 'New Orleans', roast: 'dark'},
+//     {id: 10, name: 'European', roast: 'dark'},
+//     {id: 11, name: 'Espresso', roast: 'dark'},
+//     {id: 12, name: 'Viennese', roast: 'dark'},
+//     {id: 13, name: 'Italian', roast: 'dark'},
+//     {id: 14, name: 'French', roast: 'dark'},
+// ];
+//
+// console.log(coffees[0].id);
+//
+// let coffeeNameArray = [];
+// let coffeeFilteredArray = [];
+// let typedString = 'B'
+//
+// for (let i = 0; i < coffees.length; i++) {
+//     // console.log(coffees[i].name);
+//     coffeeNameArray.push(coffees[i].name);
+// }
+// let tempArray = [];
+// for (let i = 0; i < coffeeNameArray.length; i++) {
+//
+//     if (coffeeNameArray[i].includes(typedString) === true) {
+//         tempArray.push(coffeeNameArray[i]);
+//         console.log(tempArray);
+//     }
+// }
 
-console.log(coffees[0].id);
 
-let coffeeNameArray = [];
-let coffeeFilteredArray = [];
-let typedString = 'B'
 
-for (let i = 0; i < coffees.length; i++) {
-    // console.log(coffees[i].name);
-    coffeeNameArray.push(coffees[i].name);
-}
-let tempArray = [];
-for (let i = 0; i < coffeeNameArray.length; i++) {
 
-    if (coffeeNameArray[i].includes(typedString) === true) {
-        tempArray.push(coffeeNameArray[i]);
-        console.log(tempArray);
-    }
-}
 
+
+
+
+// Write a function called whichStringIsLonger() that takes two parameters and returns one of 4 values:
+//     returns "first" if the first string parameter is longer
+// returns "second" if the second parameter is longer
+// returns "neither" if they are the same length
+// returns false if either or both of the parameters are not strings
+
+// function whichStringIsLonger(firstString, secondString) {
+//     if (typeof firstString !== 'string' || typeof secondString !== 'string') {
+//         return false;
+//     }
+//     if (firstString.length > secondString.length) {
+//         return 'first';
+//     }
+//     if (firstString.length < secondString.length){
+//         return 'second';
+//     }
+//     return 'neither'
+// }
+//
+// console.log(whichStringIsLonger("bobby", "lou")); // returns first
+// console.log(whichStringIsLonger("bob", "louise")); // returns second
+// console.log(whichStringIsLonger("bob", "lou")); // returns neither
+// console.log(whichStringIsLonger("bobby", 2)); // returns false
+// console.log(whichStringIsLonger(1, "lou")); // returns false
+
+
+// function sumOfThreeNumbers (num1, num2, num3) {
+//     if (typeof num1 === 'number' && typeof num2 === 'number' && typeof num3 === 'number') {
+//         return num1 + num2 +num3;
+//     }
+//     return false;
+// }
+//
+// console.log(sumOfThreeNumbers(1, 2, 3)); // return 6
+// console.log(sumOfThreeNumbers(-10, 2, 3)); // return -5
+// console.log(sumOfThreeNumbers(1, 2, "bob")); // return false
+
+
+// function convertInchesToCentimeters(value) {
+//     return (value * 2.54);
+// }
+//
+// console.log(convertInchesToCentimeters(6));
 
 
 
