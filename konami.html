@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+    <style>
+        /*body {*/
+        /*    background-color: rgb(19, 28, 40);*/
+        /*}*/
+    </style>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<div id="cheat-activated-alert"></div>
+
+<script src="/js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+
+    let cheatActiveAlert = $('#cheat-activated-alert');
+    let code = '';
+
+    $('body').css({'color': '#E7E7E7', 'background-color': '#F24C00'});
+    $('h1').css('text-align', 'center')
+
+    function alertBoxStyle() {
+            cheatActiveAlert.html('<div class="message"> Player has gained 30 lives!</div>')
+            cheatActiveAlert.css({'display': 'flex', 'justify-content': 'center', 'align-items': 'center', 'background-color': '#FC7A1E'});
+            cheatActiveAlert.css('font-size', '48px')
+            cheatActiveAlert.css('width', '50%');
+            cheatActiveAlert.css('height', '200px');
+            cheatActiveAlert.css('text-align', 'center');
+            cheatActiveAlert.css('margin', 'auto');
+            cheatActiveAlert.css('border', '1px solid #F9C784');
+            cheatActiveAlert.css('border-radius', '10px');
+
+        let delay = 3000;
+
+        let timeoutId = setTimeout(function () {
+            cheatActiveAlert.css('display', 'none');
+        }, delay);
+    }
+
+    function alertSound () {
+        const audio = new Audio();
+        audio.src = "videos/mixkit-retro-game-notification-212.mp3"
+        audio.volume = .5;
+        audio.play();
+    }
+
+    $(document).keyup(function(event){
+        code += event.keyCode;
+        console.log(code);
+        if (code.includes('3838404037393739666513')) {
+
+            console.log('youve gained 30 lives');
+
+            alertSound();
+            alertBoxStyle();
+        }
+    });
+</script>
+</body>
+</html>
