@@ -3,40 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>National parks</title>
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+    </style>
 </head>
 <body>
 
 <dl>
     <dt>What is the highest peak in Yellowstone?</dt>
-    <dd>Eagle Peak in the southeastern part of Yellowstone is the highest at 11,358 feet.</dd>
+    <dd class="invisible">Eagle Peak in the southeastern part of Yellowstone is the highest at 11,358 feet.</dd>
 
     <dt>Yosemite</dt>
-    <dd>Three of the 10 largest waterfalls reside in this park</dd>
+    <dd class="invisible">Three of the 10 largest waterfalls reside in this park</dd>
 
     <dt>Yosemite</dt>
-    <dd>Ribbon falls is 9 times taller than Niagra falls</dd>
+    <dd class="invisible">Ribbon falls is 9 times taller than Niagra falls</dd>
 
     <dt>Grand Canyon</dt>
-    <dd>one of the 7 natural wonders of the world</dd>
+    <dd class="invisible">one of the 7 natural wonders of the world</dd>
 
     <dt>Cali and Alaska</dt>
-    <dd>Each have 8 national parks</dd>
+    <dd class="invisible">Each have 8 national parks</dd>
 
     <dt>Mammoth Cave National Park</dt>
-    <dd>has the longest cave system in the world with more than 3,454 mapped miles.</dd>
+    <dd class="invisible">has the longest cave system in the world with more than 3,454 mapped miles.</dd>
 
     <dt>Carlsbad Caverns National Park</dt>
-    <dd>home to the nation's deepest cave, which is 1,593 feet deep.</dd>
+    <dd class="invisible">home to the nation's deepest cave, which is 1,593 feet deep.</dd>
 
     <dt>Thaddeus Kosciuszko National Memorial.</dt>
-    <dd>The smallest national park unit is a part of an acre in downtown Philadelphia</dd>
+    <dd class="invisible">The smallest national park unit is a part of an acre in downtown Philadelphia</dd>
 
     <dt>Wind Cave National Park</dt>
-    <dd>first cave to be named a national park in the world. </dd>
+    <dd class="invisible">first cave to be named a national park in the world. </dd>
 
     <dt>Mount Rainier</dt>
-    <dd>most glaciated peak in the contiguous U.S. with 26 major glaciers.</dd>
+    <dd class="invisible">most glaciated peak in the contiguous U.S. with 26 major glaciers.</dd>
 </dl>
+<a href="#">link</a>
+<script src="js/jquery-2.2.4.js"></script>
+<script>
 
+    // $('.invisible').css('visibility', 'hidden');
+
+    $('a').click(function (event){
+        event.preventDefault();
+        $('dd').toggleClass('invisible');
+    })
+    $('dt').click(function (){
+        $(this).css('background-color', 'yellow');
+    })
+
+</script>
 </body>
 </html>
