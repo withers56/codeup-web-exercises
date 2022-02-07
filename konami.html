@@ -13,6 +13,8 @@
     "use strict";
 
     let cheatActiveAlert = $('#cheat-activated-alert');
+    let cheatArray = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13]
+    let inputArray = [];
     let code = '';
 
     $('body').css({'color': '#E7E7E7', 'background-color': '#F24C00'});
@@ -47,15 +49,32 @@
 
     $(document).keyup(function(event){
         code += event.keyCode;
-        console.log(code);
-        if (code.includes('3838404037393739666513')) {
 
+        //method using an array
+        inputArray.push(event.keyCode);
+
+        for (let i = 0; i < inputArray.length; i++) {
+            if (inputArray[i] !== cheatArray[i]) {
+                inputArray = [];
+            }
+        }
+
+        if (inputArray.length === cheatArray.length) {
             console.log('youve gained 30 lives');
 
             alertSound();
             alertBoxStyle();
-            code = '';
         }
+
+        //method using string
+        // if (code.includes('3838404037393739666513')) {
+        //
+        //     console.log('youve gained 30 lives');
+        //
+        //     alertSound();
+        //     alertBoxStyle();
+        //     code = '';
+        // }
     });
 </script>
 </body>

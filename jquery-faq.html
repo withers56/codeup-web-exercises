@@ -7,6 +7,36 @@
         .invisible {
             visibility: hidden;
         }
+        .container {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 4em;
+        }
+
+        #frame1 {
+            border: 5px solid saddlebrown;
+            width: 300px;
+            height: 400px;
+        }
+        #frame2 {
+            border: 5px solid saddlebrown;
+            width: 300px;
+            height: 400px;
+        }
+        #frame3 {
+            border: 5px solid saddlebrown;
+            width: 300px;
+            height: 400px;
+        }
+        .mac {
+            background-image: url("images/macbook.jpg");
+        }
+        .man {
+            background-image: url("images/loneman.jpg");
+        }
+        .apples {
+            background-image: url("images/apple-ipad.jpg");
+        }
     </style>
 </head>
 <body>
@@ -43,28 +73,47 @@
     <dd class="invisible">most glaciated peak in the contiguous U.S. with 26 major glaciers.</dd>
 </dl>
 
-<h3>Gardner</h3>
-<ul>
+<h3 id="garner-head">Gardner</h3>
+<ul id="garner">
     <li>The park's rock formations were created in the Cretaceous age, which ended around 65 million years ago</li>
     <li>Before tubers flocked to the river, natives camped in the area ... 12,000 years ago</li>
     <li>Garner is one of 31 existing Texas parks built by the Civilian Conservation Corps</li>
     <li>Bald cypress trees that line the Frio River live to be 600 years old</li>
 </ul>
-<h3>YellowStone</h3>
-<ul>
+<h3 id="yellowstone-head">YellowStone</h3>
+<ul id="yellowstone">
     <li>Yellowstone encompasses 3,472 square miles (2,221,766 acres) which makes it larger than Rhode Island and Delaware combined.</li>
     <li>There are more than 10,000 hydrothermal features in Yellowstone. The four types of thermal features are geysers, hot springs, mud pots, and fumaroles.</li>
     <li>Yellowstone is home to more than 500 active geysers (more than half the world’s geysers)</li>
     <li>Yellowstone Lake has 131.7 sq. miles of surface area and 141 miles of shoreline. It is the largest high elevation lake in North America</li>
 </ul>
-<h3>Grand Canyon</h3>
-<ul>
+<h3 id="grandcanyon-head">Grand Canyon</h3>
+<ul id="grandcanyon">
     <li>Grand Canyon National Park is bigger than the entire state of Rhode Island</li>
     <li>The Hopi Tribe considers the Grand Canyon a gateway to the afterlife</li>
     <li>Temperatures vary greatly within the canyon</li>
     <li>n 1909, the canyon was the site of a giant hoax</li>
 </ul>
+
 <a href="#">link</a>
+<button id="myButton">button</button>
+
+<div class="container">
+    <div id="frame1" class="mac"></div>
+    <div id="frame2" class="man" ></div>
+    <div id="frame3" class="apples"></div>
+</div>
+
+<div class="container">
+    <button id="btn1">btn</button>
+    <button id="btn2">btn</button>
+    <button id="btn3">btn</button>
+</div>
+
+
+
+
+
 <script src="js/jquery-2.2.4.js"></script>
 <script>
 
@@ -77,6 +126,51 @@
     $('dt').click(function (){
         $(this).css('background-color', 'yellow');
     })
+    $('#myButton').click(function () {
+        $('#garner').children().last().css('background-color', 'yellow');
+        $('#yellowstone').children().last().css('background-color', 'yellow');
+        $('#grandcanyon').children().last().css('background-color', 'yellow');
+    });
+    $('#garner-head').click(function () {
+        $('#garner').children().css('font-weight', 'bold')
+    })
+    $('#yellowstone-head').click(function () {
+        $('#yellowstone').children().css('font-weight', 'bold')
+    })
+    $('#grandcanyon-head').click(function () {
+        $('#grandcanyon').children().css('font-weight', 'bold')
+    })
+    $('li').click(function () {
+        $(this).parent().first().css('color', 'blue')
+    })
+    
+    $('#btn1').click(function () {
+        $('#frame1').toggleClass('mac').toggleClass('man')
+        $('#frame2').toggleClass('man').toggleClass('mac')
+
+    })
+
+    $('#btn2').click(function () {
+        let num = Math.ceil(Math.random()*1000);
+
+        if (num % 2 === 0) {
+            $('#frame1').toggleClass('mac').toggleClass('man')
+            $('#frame2').toggleClass('man').toggleClass('mac')
+        }
+        else {
+            $('#frame2').toggleClass('man').toggleClass('apples')
+            $('#frame3').toggleClass('apples').toggleClass('man')
+        }
+
+    })
+
+    $('#btn3').click(function () {
+        $('#frame2').toggleClass('man').toggleClass('apples')
+        $('#frame3').toggleClass('apples').toggleClass('man')
+    })
+
+
+
 
 </script>
 </body>

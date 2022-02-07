@@ -616,10 +616,22 @@ function forLoopIterate2(input) {
 // Example return: {low: 35, high: 42}
 
 
-function convertLowHighToObject (lowHighString) {
-    let tempArray = lowHighString.split(', ');
-    return {low: parseInt(tempArray[0]), high: parseInt(tempArray[1])};
+// function convertLowHighToObject (lowHighString) {
+//     let tempArray = lowHighString.split(', ');
+//     return {low: parseInt(tempArray[0]), high: parseInt(tempArray[1])};
+//
+// }
+//
+// console.log(convertLowHighToObject('35, 42'));
 
-}
 
-console.log(convertLowHighToObject('35, 42'));
+
+
+let cheatArray = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13]
+let inArray = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13]
+
+console.log(cheatArray);
+console.log(inArray);
+if (cheatArray === inArray)
+    console.log('yeet')
+
