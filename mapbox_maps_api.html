@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Api</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+
+<div id='map' style='width: 100%; height: 717px;'></div>
+
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script>
+
+    let favoriteResturants = [
+        {
+            name: 'Chama Gaúcha',
+            type: 'Brazilian steakhouse',
+            rating: 4.9,
+            location: '18318 Sonterra Pl, San Antonio, TX 78258'
+        },
+        {
+            name: 'Olive Garden',
+            type: 'Italian',
+            rating: 4.3,
+            location: '15814 I-10 West, San Antonio, TX 78257'
+        },
+        {
+            name: 'Texas Roadhouse',
+            type: 'Steak House',
+            rating: 4.3,
+            location: '6616 W Loop 1604 N, San Antonio, TX 78254'
+        },
+        {
+            name: 'Hopdoddy Burger Bar',
+            type: 'Burger Bar',
+            rating: 4.3,
+            location: '17623 La Cantera Pkwy Suite 101, San Antonio, TX 78257'
+        }
+    ]
+
+    function displayRestaurantInfo (restaurant) {
+        restaurant.forEach(function (index) {
+            console.log(index.name);
+        });
+    }
+    displayRestaurantInfo(favoriteResturants);
+
+
+
+    mapboxgl.accessToken = 'pk.eyJ1Ijoid2l0aGVyczU2IiwiYSI6ImNremQ2enk2ZjAwOG8yd3AyZTBjMjI4YzUifQ.old03iC9Yj1jtM1JOHKPtw';
+
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/dark-v10', // style URL
+        center: [-98.4916, 29.4252], // starting position [lng, lat]
+        zoom: 9.5 // starting zoom
+    });
+
+
+    // let marker = new mapboxgl.Marker().setLngLat([result[0], result[1]]).addTo(map)
+    // marker.setPopup(alamoPopup)
+    // map.setCenter(result);
+    // map.setZoom(17);
+    let chaumaPopup = '';
+    let olivePopup = '';
+    let texasRoadhousePopup = '';
+    let hopPopup = '';
+
+
+
+    favoriteResturants.forEach(function (index){
+        if (index.name === 'Chama Gaúcha') {
+            chaumaPopup = new mapboxgl.Popup()
+                .setMaxWidth('300px')
+                .setHTML(`
+                            <div class="card" style="width: 100%;">
+                                <img class="card-img-top" src="https://scontent-hou1-1.xx.fbcdn.net/v/t1.6435-9/139789710_100739078690717_3379758862774488587_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=e3f864&_nc_ohc=KxPw_kzz5yoAX8sZ0HQ&_nc_ht=scontent-hou1-1.xx&oh=00_AT_bs20NW32qUwmeMpuF0aFMDQ3Jxb5rSMg5dstMB5QLaw&oe=6225CFB0" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">${index.name}</h5>
+                                    <p class="card-text">${index.location}</p>
+                                    <p class="card-text">${index.type}</p>
+                                    <p class="card-text">Rating: ${index.rating}/5</p>
+                                    <a href="https://chamagaucha.com/" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        `)
+        }
+        if (index.name === 'Olive Garden') {
+            olivePopup = new mapboxgl.Popup()
+                .setHTML(`
+                            <div class="card" style="width: 100%;">
+                                <img class="card-img-top" src="https://media.olivegarden.com/en_us/images/product/classic-chicken-alfredo-dinner-dpv-590x365.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">${index.name}</h5>
+                                    <p class="card-text">${index.location}</p>
+                                    <p class="card-text">${index.type}</p>
+                                    <p class="card-text">Rating: ${index.rating}/5</p>
+                                    <a href="https://olivegarden.com/" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        `)
+        }
+        if (index.name === 'Texas Roadhouse') {
+            texasRoadhousePopup = new mapboxgl.Popup()
+                .setHTML(`
+                            <div class="card" style="width: 100%;">
+                                <img class="card-img-top" src="https://i.insider.com/5d029e166fc92003bc28ee09?width=2000&format=jpeg&auto=webp" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">${index.name}</h5>
+                                    <p class="card-text">${index.location}</p>
+                                    <p class="card-text">${index.type}</p>
+                                    <p class="card-text">Rating: ${index.rating}/5</p>
+                                    <a href="https://texasroadhouse.com/" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        `)
+        }
+        if (index.name === 'Hopdoddy Burger Bar') {
+            hopPopup = new mapboxgl.Popup()
+                .setHTML(`
+                            <div class="card" style="width: 100%;">
+                                <img class="card-img-top" src="https://austinfoodmagazine.com/wp-content/uploads/2019/10/truffle-mac-with-fries.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">${index.name}</h5>
+                                    <p class="card-text">${index.location}</p>
+                                    <p class="card-text">${index.type}</p>
+                                    <p class="card-text">Rating: ${index.rating}/5</p>
+                                    <a href="https://hopdoddy.com/" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        `)
+        }
+    });
+
+
+
+
+
+
+
+    geocode("18318 Sonterra Pl, San Antonio, TX 78258", 'pk.eyJ1Ijoid2l0aGVyczU2IiwiYSI6ImNremQ2enk2ZjAwOG8yd3AyZTBjMjI4YzUifQ.old03iC9Yj1jtM1JOHKPtw').then(function(result) {
+        let chaumaMarker = new mapboxgl.Marker().setLngLat([result[0], result[1]]).addTo(map)
+        chaumaMarker.setPopup(chaumaPopup);
+    });
+    geocode("15814 I-10 West, San Antonio, TX 78257", 'pk.eyJ1Ijoid2l0aGVyczU2IiwiYSI6ImNremQ2enk2ZjAwOG8yd3AyZTBjMjI4YzUifQ.old03iC9Yj1jtM1JOHKPtw').then(function(result) {
+        let oliveMarker = new mapboxgl.Marker().setLngLat([result[0], result[1]]).addTo(map)
+        oliveMarker.setPopup(olivePopup);
+    });
+    geocode("6616 W Loop 1604 N, San Antonio, TX 78254", 'pk.eyJ1Ijoid2l0aGVyczU2IiwiYSI6ImNremQ2enk2ZjAwOG8yd3AyZTBjMjI4YzUifQ.old03iC9Yj1jtM1JOHKPtw').then(function(result) {
+        let texasRoadhouseMarker = new mapboxgl.Marker().setLngLat([result[0], result[1]]).addTo(map)
+        texasRoadhouseMarker.setPopup(texasRoadhousePopup);
+    });
+    geocode("17623 La Cantera Pkwy Suite 101, San Antonio, TX 78257", 'pk.eyJ1Ijoid2l0aGVyczU2IiwiYSI6ImNremQ2enk2ZjAwOG8yd3AyZTBjMjI4YzUifQ.old03iC9Yj1jtM1JOHKPtw').then(function(result) {
+        let hopMarker = new mapboxgl.Marker().setLngLat([result[0], result[1]]).addTo(map)
+        hopMarker.setPopup(hopPopup);
+    });
+
+</script>
+</body>
+</html>
