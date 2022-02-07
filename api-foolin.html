@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>api foolin</title>
+</head>
+<body>
+
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+
+
+
+
+    // $.ajax("https://www.balldontlie.io/api/v1/stats").done(function (data, status) {
+    //     for (let i = 0; i < data.data.length; i++) {
+    //         // console.log(data.data[i]);
+    //         // console.log("player was " + data.data[i].player.height_feet + " " + data.data[i].player.height_inches + " inches");
+    //
+    //         if (data.data[i].fg3_pct > .4) {
+    //             console.log(data.data[i])
+    //         }
+    //     }
+    //
+    //
+    // });
+    let nameSearch = 'keldon'
+     let url = "https://www.balldontlie.io/api/v1/players?search=" + nameSearch
+
+    $.ajax(url).done(function (data, status) {
+
+        console.log(data.data);
+
+    });
+
+</script>
+</body>
+</html>
