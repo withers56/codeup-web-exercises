@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        body {
+            background-color: #1b1e21;
+        }
+        th {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card bg-transparent" style="width: 100%;">
+    <img src="images/tools-banner.jpeg" class="card-img-top" alt="..." height="150px">
+    <div class="card-body text-center">
+        <h1 class="text-white">My Tool Store</h1>
+        <table id="products" class="card-text table-striped table-bordered table-dark m-auto">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Categories</th>
+            </tr>
+            </thead>
+            <tbody id="insertProducts"></tbody>
+        </table>
+        <button id="refresh-btn" class="btn btn-primary mt-3">magic button</button>
+
+    </div>
+</div>
+
+
+
+
+<div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+(function() {
+    "use strict";
+
+    let inventory = $.ajax("data/inventory.json");
+
+    // TODO: Create an AJAX GET request for the file under data/inventory.json
+    inventory.done(function(data, status, jqXhr) {
+        console.log("Request status: " + status);
+        console.log("Data returned from server:");
+        console.log(data);
+    });
+    // TODO: Take the data from inventory.json and append it to the products table
+    inventory.done(function (data){
+
+        for (let i = 0; i < data.length; i++) {
+            $('#insertProducts').append(`<tr>
+            <td>${data[i].title}</td>
+            <td>${data[i].quantity}</td>
+            <td>${data[i].price}</td>
+            <td>${data[i].categories}</td>
+        </tr>`);
+        }
+    });
+
+    $('#refresh-btn').click(function () {
+        inventory.done(function(data, status, jqXhr) {
+            console.log("Request status: " + status);
+            console.log("Data returned from server:");
+            console.log(data);
+        });
+    })
+
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+})();
+</script>
+
+</body>
+</html>
