@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Blog</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <div class="container-fluid mt-3 p-0"></div>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+
+    $(document).ready(function () {
+
+        $('body').css({"color": 'white', "background-color": "#121212"})
+
+        $.ajax('data/blog.json').done(function (data, status) {
+            console.log(status);
+            console.log(data);
+
+            for (let i = 0; i < data.length; i++) {
+                $(".container-fluid").append(`<div id="posts">
+            <div class="row my-5 ml-0 ml-md-2">
+                <div class="col-12 col-md-4 p-0" style="background-size: contain; border: 3px solid #404040; border-radius: 5px" >
+                    <img src="https://picsum.photos/200/300" alt="" style="width: 100%">
+                </div>
+                <div class="col-12 col-md-8">
+                    <div class="col-12 mb-3 font-weight-bold">${data[i].title}</div>
+                    <div class="col-12 m-1 font-weight-light">categories: ${data[i].categories}</div>
+                    <div class="col-12 m-1 font-weight-lighter">${data[i].date}</div>
+                    <div class="col-12 mt-3">${data[i].content}</div>
+                </div>
+            </div>
+        </div>`)
+            }
+        });
+    });
+
+
+
+
+
+</script>
+</body>
+</html>
