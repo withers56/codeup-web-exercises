@@ -8,6 +8,8 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
     <script src="js/keys.js"></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet'>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
 
     <style>
         body {
@@ -16,7 +18,7 @@
             margin: 0;
             color: rgba(245, 245, 245, .9);
         }
-        .container {
+        .marker {
 
         }
     </style>
@@ -105,7 +107,24 @@
         style: 'mapbox://styles/mapbox/dark-v10', // style URL
         center: [-98.4916, 29.4252], // starting position [lng, lat]
         zoom: 9.5 // starting zoom
+
     });
+
+    map.doubleClickZoom.disable();
+
+
+
+
+
+
+
+    map.addControl(
+        new MapboxGeocoder({
+            accessToken: MAPBOXGL_ACCESS_TOKEN,
+            mapboxgl: mapboxgl,
+            marker: false
+        })
+    );
 
     function increaseZoom () {
         map.zoomIn();
@@ -128,34 +147,44 @@
             currentMarkers.push(customMarker);
             map.setCenter(result);
             map.setZoom(15);
-            requestAnimationFrame(animateMarker);
 
-            function animateMarker(timestamp) {
-                const radius = 1;
+            // requestAnimationFrame(animateMarker);
+            //
+            // function defaultMarker () {
+            //     customMarker.setLngLat([
+            //         result[0],
+            //         result[1]
+            //     ]);
+            // }
 
-                /*
-                Update the data to a new position
-                based on the animation timestamp.
-                The divisor in the expression `timestamp / 1000`
-                controls the animation speed.
-                */
-                // console.log(timestamp);
-                let num = Math.sin(timestamp) - .9
-                console.log(num);
-                customMarker.setLngLat([
-                    result[0],
-                    result[1]
-                ]);
-
-                /*
-                Ensure the marker is added to the map.
-                This is safe to call if it's already added.
-                */
-                customMarker.addTo(map);
-
-// Request the next frame of the animation.
-                requestAnimationFrame(animateMarker);
-            }
+//             function animateMarker(timestamp) {
+//                 const radius = 1;
+//                 // console.log(`start = ${timestamp}, end = ${timestamp + 200}`)
+//                 /*
+//                 Update the data to a new position
+//                 based on the animation timestamp.
+//                 The divisor in the expression `timestamp / 1000`
+//                 controls the animation speed.
+//                 */
+//                 // console.log(timestamp);
+//
+//
+//                 let num = Math.sin(timestamp / 500) / 2000;
+//
+//                 customMarker.setLngLat([
+//                     result[0],
+//                     result[1] + num
+//                 ]);
+//
+//                 /*
+//                 Ensure the marker is added to the map.
+//                 This is safe to call if it's already added.
+//                 */
+//                 customMarker.addTo(map);
+//
+// // Request the next frame of the animation.
+//                 requestAnimationFrame(animateMarker);
+//             }
         });
     }
 
