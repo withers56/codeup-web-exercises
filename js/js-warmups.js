@@ -627,11 +627,14 @@ function forLoopIterate2(input) {
 
 
 
-let cheatArray = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13]
-let inArray = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13]
+// let cheatArray = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13]
+// let inArray = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13]
+//
+// console.log(cheatArray);
+// console.log(inArray);
+// if (cheatArray === inArray)
+//     console.log('yeet')
 
-console.log(cheatArray);
-console.log(inArray);
-if (cheatArray === inArray)
-    console.log('yeet')
+
+console.log(Math.sin(200000) - .9);
 

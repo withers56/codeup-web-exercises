@@ -48,31 +48,42 @@
 
     let inventory = $.ajax("data/inventory.json");
 
-    // TODO: Create an AJAX GET request for the file under data/inventory.json
-    inventory.done(function(data, status, jqXhr) {
-        console.log("Request status: " + status);
-        console.log("Data returned from server:");
-        console.log(data);
-    });
-    // TODO: Take the data from inventory.json and append it to the products table
-    inventory.done(function (data){
+    getProduct();
 
-        for (let i = 0; i < data.length; i++) {
-            $('#insertProducts').append(`<tr>
-            <td>${data[i].title}</td>
-            <td>${data[i].quantity}</td>
-            <td>${data[i].price}</td>
-            <td>${data[i].categories}</td>
-        </tr>`);
-        }
-    });
 
-    $('#refresh-btn').click(function () {
+
+
+
+    function getProduct() {
+        // TODO: Create an AJAX GET request for the file under data/inventory.json
         inventory.done(function(data, status, jqXhr) {
             console.log("Request status: " + status);
             console.log("Data returned from server:");
             console.log(data);
         });
+        // TODO: Take the data from inventory.json and append it to the products table
+        inventory.done(function (data){
+
+            for (let i = 0; i < data.length; i++) {
+                $('#insertProducts').append(printHtml(data, i));
+            }
+        });
+    }
+
+
+    function printHtml (data, i) {
+        return `<tr>
+            <td>${data[i].title}</td>
+            <td>${data[i].quantity}</td>
+            <td>${data[i].price}</td>
+            <td>${data[i].categories}</td>
+        </tr>`
+    }
+
+
+    $('#refresh-btn').click(function () {
+        $('#insertProducts').html('');
+        getProduct();
     })
 
     //       HINT: Your data should come back as a JSON object; use console.log() to inspect
