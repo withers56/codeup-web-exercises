@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Get features under the mouse pointer</title>
+    <title>Add a geocoder</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
@@ -12,61 +12,53 @@
     </style>
 </head>
 <body>
-<style>
-    #features {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 50%;
-        overflow: auto;
-        background: rgba(255, 255, 255, 0.8);
-    }
-    #map canvas {
-        cursor: crosshair;
-    }
-</style>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
+<!-- Load the `mapbox-gl-geocoder` plugin. -->
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
+
 <div id="map"></div>
-<pre id="features"></pre>
+
 <script>
     mapboxgl.accessToken = 'pk.eyJ1Ijoid2l0aGVyczU2IiwiYSI6ImNremQ2dnkydjIzcjQydnBxNzRmcmJubzUifQ.nUrWrFT1loE6evqsaxtvMw';
     const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
-        center: [-96, 37.8],
-        zoom: 3
+        center: [-98.4916, 29.4252],
+        zoom: 10
     });
 
-    map.on('mousemove', (e) => {
-        const features = map.queryRenderedFeatures(e.point);
+    // Add the control to the map.
+    let geoCoder = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl,
 
-        // Limit the number of properties we're displaying for
-        // legibility and performance
-        const displayProperties = [
-            'type',
-            'properties',
-            'id',
-            'layer',
-            'source',
-            'sourceLayer',
-            'state'
-        ];
-
-        const displayFeatures = features.map((feat) => {
-            const displayFeat = {};
-            displayProperties.forEach((prop) => {
-                displayFeat[prop] = feat[prop];
-            });
-            return displayFeat;
-        });
-
-        // Write object as string with an indent of two spaces.
-        document.getElementById('features').innerHTML = JSON.stringify(
-            displayFeatures,
-            null,
-            2
-        );
     });
+
+    map.addControl(
+        new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+// When active the map will receive updates to the device's location as it changes.
+            trackUserLocation: true,
+// Draw an arrow next to the location dot to indicate which direction the device is heading.
+            showUserHeading: true
+        })
+    );
+
+    map.addControl(
+        geoCoder,
+        'top-left'
+    );
+
+    map.addControl(
+        new MapboxDirections({
+            accessToken: mapboxgl.accessToken
+        }),
+        'top-left'
+    );
 </script>
 
 </body>
