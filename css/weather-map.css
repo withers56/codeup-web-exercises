@@ -1,0 +1,8 @@
+#map {
+    /* the width and height may be set to any size */
+    width: 50%;
+    height: 500px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
