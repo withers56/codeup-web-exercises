@@ -7,6 +7,7 @@
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css">
+<!--    <link rel="stylesheet" href="css/bootstrap-grid-outline.css">-->
     <script src="js/keys.js"></script>
     <link rel="stylesheet" href="css/weather-map.css">
 </head>
@@ -17,19 +18,28 @@
 
 
 
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-6 test weather-box mt-1"></div>
+
+        <div class="col-6 current-day-box p-0">
+
+
+
+        </div>
+
+    </div>
+</div>
 
 
 
 <div id="map"></div>
 
 
-
-
-
-
-
+<script src="js/mapbox-geocoder-utils.js"></script>
 <script src="js/jquery-2.2.4.js"></script>
-<script src="js/weather_map_jQuery.js"></script>
 <script src="js/weather-map-mapbox-api.js"></script>
+<script src="js/weather_map_jQuery.js"></script>
 </body>
 </html>
