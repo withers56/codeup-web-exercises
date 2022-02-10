@@ -2,12 +2,12 @@
 // $(document).ready(function (){
 
 
+let startUpArray = ['600 Navarro', 'San Antonio', 'Texas 78255'];
 
 
+getLocationData(29.42 ,-98, startUpArray);
 
-getLocationData(29.42 ,-98);
-
-    function appendWeatherData(data) {
+    function appendWeatherData(data, locationArray) {
 
         let weatherBox = $('.weather-box');
         let currentDayBox = $('.current-day-box');
@@ -15,9 +15,9 @@ getLocationData(29.42 ,-98);
         currentDayBox.html('');
         currentDayBox.html(
             `
-                     <div class="card mt-1">
+                     <div class="card mt-1 mx-2">
                 <div class="card-header">
-                    <span>${getTime()}</span>
+                    <span>${locationArray[0]}, ${locationArray[1]}</span><span class="smaller-text pl-3">${getTime()}</span>
                 </div>
                 <div class="card-body">
 
@@ -31,7 +31,7 @@ getLocationData(29.42 ,-98);
                         </div>
                 </div>
                 <div class="card-header">
-                    <button class="btn">btn</button>
+                    <a href="https://openweathermap.org/" target="_blank"><button class="btn">Open weather map</button></a>
                 </div>
             </div>
                     `)
@@ -49,36 +49,37 @@ getLocationData(29.42 ,-98);
                 <div>
                     ${getDayOfWeek(getDate(data.daily[i].dt).getDay())}
                 </div>
-                <div><span class="mr-2">Low: ${data.daily[i].temp.min.toFixed(0)}&#176;</span>       High: ${data.daily[i].temp.max.toFixed(0)}&#176;</div>
+                <div><span class="mr-2">Low: ${data.daily[i].temp.min.toFixed(0)}&#176;</span> High: ${data.daily[i].temp.max.toFixed(0)}&#176;</div>
             </div>
+            
             `)
 
         }
+
+        weatherBox.append(`
+                            <div class="col-12 d-flex justify-content-between align-items-center text-center mt-3">
+                                <div class="col-4">
+                                    <a href="https://github.com/withers56" target="_blank"><i class="bi bi-github"></i></i></a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="https://openweathermap.org/" target="_blank"><i class="bi bi-brightness-high"></i></a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="https://www.mapbox.com/" target="_blank"><i class="bi bi-map"></i></a>
+                                </div>
+                            </div>
+                            
+</div>
+                            `)
     }
 
 
 
-    function getLocationData (lat, long) {
+    function getLocationData (lat, long, locationArray) {
         $.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=minutely&appid=${OPEN_WEATHER_MAP_KEY}`, {
             units: "imperial"
         }).done(function(data) {
-
-            //current days, info
-
-            // console.log(getDate(data.current.dt));
-            // console.log("Current: " + data.current.temp)
-            // console.log("Low: " + data.daily[0].temp.min)
-            // console.log("High: " + data.daily[0].temp.max)
-            // console.log(data)
-            //
-            // //rest of weeks info
-            // for (let i = 0; i < data.daily.length; i++) {
-            //     let daysData = data.daily[i]
-            //     console.log(getDate(daysData.dt));
-            //     console.log("Low: " + daysData.temp.min);
-            //     console.log("High: " + daysData.temp.max);
-            // }
-            appendWeatherData(data)
+            appendWeatherData(data, locationArray)
         });
     }
 
@@ -129,19 +130,20 @@ getLocationData(29.42 ,-98);
     function getTime() {
         let now = new Date();
         let hours = now.getHours();
-        console.log(hours)
+        let minutes = now.getMinutes();
         var time = now.getHours() + ":" + now.getMinutes();
 
-
+        if (now.getMinutes() < 10) {
+            minutes = "0" + minutes;
+        }
 
         if(now.getHours() > 12){
             hours -= 12
-            return hours + ":" + now.getMinutes();
+            return hours + ":" + minutes;
         }
-        return hours + ":" + now.getMinutes();
+        return hours + ":" + minutes;
     }
 
-console.log(getTime())
 
 
 

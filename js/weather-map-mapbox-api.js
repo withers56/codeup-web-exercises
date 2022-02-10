@@ -12,17 +12,28 @@ const map = new mapboxgl.Map({
 const mapboxgeocoder = new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
     mapboxgl: mapboxgl,
-    marker: false
+    marker: false,
 })
+
+let currentMarkers = [];
 
 map.addControl(
     mapboxgeocoder
 );
 
 function createMarker (lng, lat) {
-    return new mapboxgl.Marker()
+
+    for (let i = 0; i < currentMarkers.length; i++) {
+        currentMarkers[i].remove();
+    }
+
+
+    let newMarker = new mapboxgl.Marker()
         .setLngLat([lng, lat])
         .addTo(map);
+    currentMarkers.push(newMarker);
+
+    return newMarker
 }
 
 function getLngLat (results) {
@@ -31,17 +42,38 @@ function getLngLat (results) {
 
 
 mapboxgeocoder.on('result', function (results){
-    console.log(results.result.place_name);
+    let addressSearchArray = [];
+    let address = results.result.place_name.split(', ')
+    addressSearchArray.push(address[1]);
+    addressSearchArray.push(address[2].split(' '));
+    addressSearchArray[1].pop();
+
+    console.log(addressSearchArray)
     geocode(`${results.result.place_name}`, MAPBOXGL_ACCESS_TOKEN).then(function (result){
-        getLocationData(result[1], result[0]);
+        getLocationData(result[1], result[0],addressSearchArray);
         createMarker(result[0], result[1]);
     });
 
 });
 
 map.on('click', function (result){
-    console.log(result.lngLat);
-    getLocationData(result.lngLat.lat, result.lngLat.lng);
+    createMarker(result.lngLat.lng, result.lngLat.lat);
+    let lat = result.lat;
+    let lng = result.lng
+    let tempArray = [];
+    reverseGeocode(result.lngLat, MAPBOXGL_ACCESS_TOKEN).then(function (result){
+
+        let addressArray = result.split(', ');
+            tempArray.push(addressArray[1]);
+            tempArray.push(addressArray[2].split(' '))
+            tempArray[1].pop()
+
+
+    });
+
+    getLocationData(result.lngLat.lat, result.lngLat.lng, tempArray);
+
+
 })
 
 

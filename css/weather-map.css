@@ -3,11 +3,10 @@ body{
 }
 #map {
     /* the width and height may be set to any size */
-    width: calc(49% + 3px);
+    width: 95%;
     height: 495px;
-    position: absolute;
-    bottom: 4px;
-    right: 10px;
+    margin: auto;
+
     border-radius: 5px;
 }
 .test {
@@ -23,7 +22,6 @@ body{
     background-color: #121212;
     color: #ffffff;
     border-radius: 5px;
-    padding-right: 10px;
 }
 .card-header {
     padding-top: 8px;
@@ -46,7 +44,26 @@ body{
 .smaller-text {
     font-size: 12px;
 }
+.bi {
+    font-size: 3em;
+    color: #ffffff;
+}
 img {
     width: 75px;
     height: 75px;
+}
+a:hover {
+    opacity: .3;
+}
+
+@media screen and (min-width:992px) {
+    #map {
+        /* the width and height may be set to any size */
+        width: calc(49% + 3px);
+        height: 495px;
+        position: absolute;
+        top: 220px;
+        right: 10px;
+        border-radius: 5px;
+    }
 }
