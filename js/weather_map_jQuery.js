@@ -78,7 +78,7 @@ function appendWeatherData(data, locationArray) {
 
         weatherBox.append
         (`
-            <div class="weekly-containers d-flex justify-content-around align-items-center border-bottom mb-1">
+            <div class="weekly-containers d-flex justify-content-around align-items-center mb-1">
                 <div>
                     <img src="http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png"  alt="icon">
                 </div>

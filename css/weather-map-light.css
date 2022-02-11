@@ -17,6 +17,7 @@ body{
     background-color: #fffdfd;
     color: #000000;
     border-radius: 5px;
+    border-bottom: 1px solid black;
 }
 .card {
     background-color: #ffffff;
