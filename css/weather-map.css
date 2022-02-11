@@ -28,6 +28,7 @@ body{
     padding-bottom: 8px;
     background-color: rgba(179, 179, 179, 0.5);
     border-radius: 0 0 5px 5px;
+    font-size: 14px;
 }
 .card-body {
     background-color: #404040;
@@ -35,6 +36,7 @@ body{
 }
 .btn {
     width: 100%;
+    padding: 0;
     background-color: #181818;
     color: #ffffff;
 }

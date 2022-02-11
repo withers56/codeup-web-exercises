@@ -1,6 +1,7 @@
 'use strict';
 
 mapboxgl.accessToken = MAPBOXGL_ACCESS_TOKEN;
+
 const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/dark-v10',
@@ -8,11 +9,20 @@ const map = new mapboxgl.Map({
     zoom: 10
 });
 
-// Add the control to the map.
 const mapboxgeocoder = new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
     mapboxgl: mapboxgl,
     marker: false,
+})
+
+const gps = new mapboxgl.GeolocateControl({
+    positionOptions: {
+        enableHighAccuracy: true
+    },
+// When active the map will receive updates to the device's location as it changes.
+    trackUserLocation: true,
+// Draw an arrow next to the location dot to indicate which direction the device is heading.
+    showUserHeading: true
 })
 
 let currentMarkers = [];
@@ -28,7 +38,7 @@ function createMarker (lng, lat) {
     }
 
 
-    let newMarker = new mapboxgl.Marker()
+    let newMarker = new mapboxgl.Marker({color: '#ec6e4c'})
         .setLngLat([lng, lat])
         .addTo(map);
     currentMarkers.push(newMarker);
@@ -42,40 +52,29 @@ function getLngLat (results) {
 
 
 mapboxgeocoder.on('result', function (results){
-    let addressSearchArray = [];
-    let address = results.result.place_name.split(', ')
-    addressSearchArray.push(address[1]);
-    addressSearchArray.push(address[2].split(' '));
-    addressSearchArray[1].pop();
 
-    console.log(addressSearchArray)
+    let addressSearchArray = results.result.place_name.split(', ')
+    let address = results.result.place_name.split(', ')
+
     geocode(`${results.result.place_name}`, MAPBOXGL_ACCESS_TOKEN).then(function (result){
-        getLocationData(result[1], result[0],addressSearchArray);
+
+        getLocationData(result[1], result[0],addressSearchArray.join(", "));
+
         createMarker(result[0], result[1]);
     });
-
 });
 
 map.on('click', function (result){
+
     createMarker(result.lngLat.lng, result.lngLat.lat);
-    let lat = result.lat;
-    let lng = result.lng
+
+    let lat = result.lngLat.lat;
+    let lng = result.lngLat.lng;
     let tempArray = [];
+
     reverseGeocode(result.lngLat, MAPBOXGL_ACCESS_TOKEN).then(function (result){
 
-        let addressArray = result.split(', ');
-            tempArray.push(addressArray[1]);
-            tempArray.push(addressArray[2].split(' '))
-            tempArray[1].pop()
-
-
+        tempArray = result.split(', ');
+        getLocationData(lat, lng, tempArray.join(', '));
     });
-
-    getLocationData(result.lngLat.lat, result.lngLat.lng, tempArray);
-
-
 })
-
-
-
-

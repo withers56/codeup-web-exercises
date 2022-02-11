@@ -1,47 +1,69 @@
 'use strict';
-// $(document).ready(function (){
+
+const geo = navigator.geolocation;
+
+settingUsersCurrentLocation();
+
+function settingUsersCurrentLocation () {
+    geo.getCurrentPosition((position) => {
+        let userLat = position.coords.latitude;
+        let userLng = position.coords.longitude;
+
+        let coordinates = {
+            lng: position.coords.longitude,
+            lat: position.coords.latitude
+        }
+
+        map.setCenter([userLng, userLat]);
+        createMarker(userLng, userLat);
+
+        reverseGeocode(coordinates, MAPBOXGL_ACCESS_TOKEN).then(function (result){
+            getLocationData(userLat,userLng, result);
+        });
 
 
-let startUpArray = ['600 Navarro', 'San Antonio', 'Texas 78255'];
 
+    });
+}
 
-getLocationData(29.42 ,-98, startUpArray);
+function appendWeatherData(data, locationArray) {
 
-    function appendWeatherData(data, locationArray) {
+    let weatherBox = $('.weather-box');
+    let currentDayBox = $('.current-day-box');
 
-        let weatherBox = $('.weather-box');
-        let currentDayBox = $('.current-day-box');
-
-        currentDayBox.html('');
-        currentDayBox.html(
-            `
-                     <div class="card mt-1 mx-2">
-                <div class="card-header">
-                    <span>${locationArray[0]}, ${locationArray[1]}</span><span class="smaller-text pl-3">${getTime()}</span>
-                </div>
-                <div class="card-body">
-
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <div class="bigger-text">${data.current.temp.toFixed(0)}&#176;</div>
-                                <div class="smaller-text">${data.current.weather[0].main}</div>
-                                <div class="smaller-text">Feels like ${data.current.feels_like.toFixed(0)}&#176; Humidity ${data.current.humidity}%</div>
+    currentDayBox.html('');
+    currentDayBox.html
+    (`
+                <div class="card mt-3 mx-2">
+                    <div class="card-header">
+                        <span>${locationArray}</span>
+                    </div>
+                    <div class="card-body">
+    
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <div class="bigger-text">${data.current.temp.toFixed(0)}&#176;</div>
+                                    <div class="smaller-text">${data.current.weather[0].main}</div>
+                                    <div class="smaller-text">Feels like ${data.current.feels_like.toFixed(0)}&#176; Humidity ${data.current.humidity}%</div>
+                                </div>
+                                <div>
+                                    <img src="http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png"  alt="icon">
+                                    <div class="smaller-text  text-center">${getSearchedTime(data.timezone_offset)}</div>
+                                </div>
                             </div>
-                            <div><img src="http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png"  alt="icon"></div>
-                        </div>
-                </div>
+                    </div>
                 <div class="card-header">
                     <a href="https://openweathermap.org/" target="_blank"><button class="btn">Open weather map</button></a>
                 </div>
             </div>
-                    `)
+    `)
 
 
-
-        console.log(data)
-        weatherBox.html('');
-        for (let i = 0; i < data.daily.length; i++) {
-            weatherBox.append(`
+    console.log(data)
+    weatherBox.html('');
+    for (let i = 0; i < data.daily.length; i++) {
+        weatherBox.append
+        (`
             <div class="weekly-containers d-flex justify-content-around align-items-center border-bottom">
                 <div>
                     <img src="http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png"  alt="icon">
@@ -50,13 +72,12 @@ getLocationData(29.42 ,-98, startUpArray);
                     ${getDayOfWeek(getDate(data.daily[i].dt).getDay())}
                 </div>
                 <div><span class="mr-2">Low: ${data.daily[i].temp.min.toFixed(0)}&#176;</span> High: ${data.daily[i].temp.max.toFixed(0)}&#176;</div>
-            </div>
-            
-            `)
+            </div> 
+        `)
+    }
 
-        }
-
-        weatherBox.append(`
+    weatherBox.append
+    (`
                             <div class="col-12 d-flex justify-content-between align-items-center text-center mt-3">
                                 <div class="col-4">
                                     <a href="https://github.com/withers56" target="_blank"><i class="bi bi-github"></i></i></a>
@@ -69,11 +90,16 @@ getLocationData(29.42 ,-98, startUpArray);
                                 </div>
                             </div>
                             
-</div>
-                            `)
-    }
+                            </div>
+    `)
 
+    weatherBox.children().each(function(index) {
+        if (index % 2 !== 0) {
+            $(this).css('background-color', 'rgba(179, 179, 179, 0.5)');
+        }
+    });
 
+}
 
     function getLocationData (lat, long, locationArray) {
         $.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=minutely&appid=${OPEN_WEATHER_MAP_KEY}`, {
@@ -81,23 +107,6 @@ getLocationData(29.42 ,-98, startUpArray);
         }).done(function(data) {
             appendWeatherData(data, locationArray)
         });
-    }
-
-    function getLowAndHigh(tempsArray) {
-
-        let low = 200;
-        let high = 0;
-
-        for (let i = 0; i < tempsArray.length; i++) {
-            if (tempsArray[i].temp < low){
-                low = tempsArray[i].temp
-            }
-            if (tempsArray[i].temp > high){
-                high = tempsArray[i].temp
-            }
-        }
-        console.log("low: " + low);
-        console.log("high: " + high);
     }
 
     function getDayOfWeek (day) {
@@ -118,53 +127,21 @@ getLocationData(29.42 ,-98, startUpArray);
             return 'Saturday';
     }
 
-    function formatHour(hours) {
-
-    }
-
     function getDate(day) {
-        let date = new Date(day * 1000);
-        return date;
+        return new Date(day * 1001);
     }
 
-    function getTime() {
-        let now = new Date();
-        let hours = now.getHours();
-        let minutes = now.getMinutes();
-        var time = now.getHours() + ":" + now.getMinutes();
+    function getSearchedTime (offset) {
+        let d = new Date()
+        let localTime;
+        localTime = d.getTime()
+        let localOffset;
+        localOffset = d.getTimezoneOffset() * 60000
+        let utc;
+        utc = localTime + localOffset
+        let atlanta = utc + (1000 * offset)
+        let newDate = new Date(atlanta)
+        console.log(newDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }));
 
-        if (now.getMinutes() < 10) {
-            minutes = "0" + minutes;
-        }
-
-        if(now.getHours() > 12){
-            hours -= 12
-            return hours + ":" + minutes;
-        }
-        return hours + ":" + minutes;
+        return newDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// });
