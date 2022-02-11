@@ -31,6 +31,11 @@ function appendWeatherData(data, locationArray) {
     let weatherBox = $('.weather-box');
     let currentDayBox = $('.current-day-box');
 
+    // console.log(data.daily[0].temp.min)
+    // console.log(data.daily[0].temp.max)
+    // console.log(data.current.temp)
+
+
     currentDayBox.html('');
     currentDayBox.html
     (`
@@ -105,13 +110,11 @@ function appendWeatherData(data, locationArray) {
                                     <a href="https://www.mapbox.com/" target="_blank"><i class="bi bi-map"></i></a>
                                 </div>
                             </div>
-                            
-                            </div>
     `)
 
     weatherBox.children().each(function(index) {
         if (index % 2 !== 0) {
-            $(this).css('background-color', 'rgba(179, 179, 179, 0.5)');
+            $(this).css('background-color', 'rgb(179,179,179)');
         }
     });
 
@@ -163,9 +166,10 @@ function appendWeatherData(data, locationArray) {
     }
 
     function getPercentage(low, high, numInBetween) {
-        let average = (low + high) / 2;
-        console.log((numInBetween * .5) / average)
-        return returnOffset((numInBetween * .5) / average);
+        let result = (numInBetween - low) / (high - low)
+        console.log(result)
+
+        return returnOffset(result);
     }
 
     function returnOffset (percentage) {
@@ -187,8 +191,10 @@ function appendWeatherData(data, locationArray) {
             return 8;
         if (.8 < percentage < .9)
             return 9;
-        if (.9 < percentage < 1)
-            return 10;
+        if (.9 < percentage <= 1)
+            return 11;
     }
 
-console.log(getPercentage(32, 75, 50));
+
+
+

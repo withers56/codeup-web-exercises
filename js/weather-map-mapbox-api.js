@@ -77,3 +77,27 @@ map.on('click', function (result){
         getLocationData(lat, lng, tempArray.join(', '));
     });
 })
+
+
+
+
+
+
+
+const layerList = document.getElementById('menu');
+const inputs = layerList.getElementsByTagName('input');
+
+
+
+for (const input of inputs) {
+    input.onclick = (layer) => {
+        const layerId = layer.target.id;
+        console.log(layer.target.id);
+
+        if(layerId === 'light-v10' || layerId === 'streets-v11' || layerId === 'satellite-v9' || layerId === 'outdoors-v11') {
+            $('#css').attr('href', 'css/weather-map-light.css');
+        } else $('#css').attr('href', 'css/weather-map.css');
+
+        map.setStyle('mapbox://styles/mapbox/' + layerId);
+    };
+}
