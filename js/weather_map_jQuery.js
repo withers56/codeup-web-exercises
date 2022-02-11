@@ -27,7 +27,7 @@ function settingUsersCurrentLocation () {
 }
 
 function appendWeatherData(data, locationArray) {
-
+    // console.log(data.current)
     let weatherBox = $('.weather-box');
     let currentDayBox = $('.current-day-box');
 
@@ -40,12 +40,19 @@ function appendWeatherData(data, locationArray) {
                     </div>
                     <div class="card-body">
     
-                            <div class="d-flex justify-content-between">
+                            <div class="d-flex justify-content-between align-items-center">
                                 <div>
                                     <div class="bigger-text">${data.current.temp.toFixed(0)}&#176;</div>
                                     <div class="smaller-text">${data.current.weather[0].main}</div>
                                     <div class="smaller-text">Feels like ${data.current.feels_like.toFixed(0)}&#176; Humidity ${data.current.humidity}%</div>
                                 </div>
+                                
+                                <div class="line-container">
+                                    <div class="point offset-${getPercentage(data.daily[0].temp.min, data.daily[0].temp.max, data.current.temp)}">
+                    
+                                    </div>
+                                </div>
+                                
                                 <div>
                                     <img src="http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png"  alt="icon">
                                     <div class="smaller-text  text-center">${getSearchedTime(data.timezone_offset)}</div>
@@ -62,12 +69,21 @@ function appendWeatherData(data, locationArray) {
     console.log(data)
     weatherBox.html('');
     for (let i = 0; i < data.daily.length; i++) {
+        let dayAverage = (data.daily[i].temp.day + data.daily[i].temp.eve + data.daily[i].temp.morn + data.daily[i].temp.night) / 4;
+
         weatherBox.append
         (`
-            <div class="weekly-containers d-flex justify-content-around align-items-center border-bottom">
+            <div class="weekly-containers d-flex justify-content-around align-items-center border-bottom mb-1">
                 <div>
                     <img src="http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png"  alt="icon">
                 </div>
+                
+                <div class="line-container">
+                    <div class="point offset-${getPercentage(data.daily[i].temp.min, data.daily[i].temp.max, dayAverage)}">
+                    
+                    </div>
+                </div>
+                
                 <div>
                     ${getDayOfWeek(getDate(data.daily[i].dt).getDay())}
                 </div>
@@ -78,7 +94,7 @@ function appendWeatherData(data, locationArray) {
 
     weatherBox.append
     (`
-                            <div class="col-12 d-flex justify-content-between align-items-center text-center mt-3">
+                            <div class="col-12 d-flex justify-content-between align-items-center text-center ">
                                 <div class="col-4">
                                     <a href="https://github.com/withers56" target="_blank"><i class="bi bi-github"></i></i></a>
                                 </div>
@@ -145,3 +161,34 @@ function appendWeatherData(data, locationArray) {
 
         return newDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
     }
+
+    function getPercentage(low, high, numInBetween) {
+        let average = (low + high) / 2;
+        console.log((numInBetween * .5) / average)
+        return returnOffset((numInBetween * .5) / average);
+    }
+
+    function returnOffset (percentage) {
+        if (0 < percentage < .1)
+            return 1;
+        if (.1 < percentage < .2)
+            return 2;
+        if (.2 < percentage < .3)
+            return 3;
+        if (.3 < percentage < .4)
+            return 4;
+        if (.4 < percentage < .5)
+            return 5;
+        if (.5 < percentage < .6)
+            return 6;
+        if (.6 < percentage < .7)
+            return 7;
+        if (.7 < percentage < .8)
+            return 8;
+        if (.8 < percentage < .9)
+            return 9;
+        if (.9 < percentage < 1)
+            return 10;
+    }
+
+console.log(getPercentage(32, 75, 50));

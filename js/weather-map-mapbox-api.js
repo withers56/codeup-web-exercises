@@ -73,7 +73,6 @@ map.on('click', function (result){
     let tempArray = [];
 
     reverseGeocode(result.lngLat, MAPBOXGL_ACCESS_TOKEN).then(function (result){
-
         tempArray = result.split(', ');
         getLocationData(lat, lng, tempArray.join(', '));
     });
