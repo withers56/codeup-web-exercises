@@ -48,7 +48,7 @@ function appendWeatherData(data, locationArray) {
                             <div class="d-flex justify-content-between align-items-center">
                                 <div>
                                     <div class="bigger-text">${data.current.temp.toFixed(0)}&#176;</div>
-                                    <div class="smaller-text">${data.current.weather[0].main}</div>
+                                    <div class="smaller-text">${data.current.weather[0].description}</div>
                                     <div class="smaller-text">Feels like ${data.current.feels_like.toFixed(0)}&#176; Humidity ${data.current.humidity}%</div>
                                 </div>
                                 
