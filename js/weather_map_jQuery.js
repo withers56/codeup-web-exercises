@@ -174,7 +174,7 @@ function appendWeatherData(data, locationArray) {
 
     function returnOffset (percentage) {
         if (0 < percentage < .1)
-            return 1;
+            return 0;
         if (.1 < percentage < .2)
             return 2;
         if (.2 < percentage < .3)
