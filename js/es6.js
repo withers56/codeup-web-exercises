@@ -49,21 +49,21 @@ let emails = [];
 let names = [];
 
 // TODO: rewrite the following using arrow functions
-// users.forEach(function(user) {
-//   return emails.push(user.email);
-// });
-const addEmails = user => emails.push(user.email);
-const addName = user => names.push(user.name);
+users.forEach((user) => {
+  return emails.push(user.email);
+});
+// const addEmails = user => emails.push(user.email);
+// const addName = user => names.push(user.name);
+//
+// for (const user of users) {
+//   addEmails(user);
+//   addName(user);
+// }
 
-for (const user of users) {
-  addEmails(user);
-  addName(user);
-}
 
-
-// users.forEach(function(user) {
-//   return names.push(user.name);
-// });
+users.forEach((user) =>{
+  return names.push(user.name);
+});
 
 
 // TODO: replace `var` with `let` in the following declaration
