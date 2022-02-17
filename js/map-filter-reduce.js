@@ -69,9 +69,15 @@ console.log(averageYearsOfExperience)
 
 // 5
 
-let longestEmail = users.reduce(function (maxLength, userLength) {
-    return Math.max(maxLength, userLength.email.length);
-}, 0)
+let longestEmail = users.reduce(function (longestEmail, user) {
+    if (user.email.length > longestEmail.length) {
+        return user.email;
+    }
+        else {
+            return longestEmail;
+        }
+
+}, '')
 
 console.log(longestEmail)
 
