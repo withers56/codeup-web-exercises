@@ -1,16 +1,11 @@
-'use strict';
+"use strict";
 
-function getGithubUsernames() {
-    return fetch('https://api.github.com/users')
-        .then(response => response.json())
-}
+getUserInfo('withers56')
 
-// later on...
-
-getGithubUsernames().then( users => {
-    users.forEach( userObj => {
-        // do something with each username
-        console.log(userObj.login);
+function getUserInfo(username) {
+    fetch(`https://api.github.com/users/${username}/events`).then((result) => {
+        return result.json();
+    }).then((jsonData) =>{
+        console.log(jsonData);
     });
-}).catch(error => console.error(error));
-
+}
