@@ -636,5 +636,69 @@ function forLoopIterate2(input) {
 //     console.log('yeet')
 
 
-console.log(Math.sin(200000) - .9);
+// console.log(Math.sin(200000) - .9);
+
+// const isDivisibleBy3 = n => n % 3 === 0;
+//
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//
+// console.log(numbers.filter(isDivisibleBy3));
+// console.log(numbers);
+
+// if (true) {
+//     let x = 5;
+// }
+// console.log(typeof x);
+
+// const sayHello = (name) => {`Hello, ${name}!`}
+
+// Write a function called countDuplicates that takes in a string and returns an object that contains the count for
+//     each letter within the given string.
+//     ex: countDuplicates("adsjfdsfsfjsdjfhacabcsbajda")
+// returns { a: 5, d: 4, s: 5, j: 4, f: 4, h: 1, c: 2, b: 2 }
+// console.log(countDuplicates("adsjfdsfsfjsdjfhacabcsbajda"));
+
+// function countDuplicates (aString) {
+//     let tempArray = [];
+//
+//     for (let i = 0; i < aString.length; i++) {
+//         tempArray.push(aString.charAt(i));
+//     }
+//     return tempArray.reduce((cnt, cur) => (cnt[cur] = cnt[cur] + 1 || 1, cnt), {});
+// }
+
+// function countDuplicates(aString) {
+//     let letterCountObj = {};
+//     let count = 1;
+//
+//     for (let i = 0; i < aString.length; i++) {
+//         if (!(aString[i] in letterCountObj)){
+//             letterCountObj[aString[i]] = count;
+//         }
+//         else letterCountObj[aString[i]] = letterCountObj[aString[i]] + count
+//     }
+//     return letterCountObj;
+// }
+
+
+// Write a function called makePerson. It takes 2 arguments: personName and age.
+//     personName must be at least 1 character long. age must be between 1 and 150.
+// If either of the parameters is invalid, output an appropriate message to the console and return FALSE.
+//     If both parameters are valid, return an object containing personName and age.
+//     E.g.,
+//     console.log(makePerson("Bob", 30)); // outputs {personName:"Bob", age:30}
+// console.log(makePerson("", 30));
+// // outputs:
+// Person name cannot be blank
+// false
+
+function makePerson(personName, age) {
+    if ((0 < age && age < 150) && personName.length >= 1){
+        return {personName, age};
+    }
+    console.log("input invalid");
+    return false;
+}
+
+console.log(makePerson("will", 24));
 
