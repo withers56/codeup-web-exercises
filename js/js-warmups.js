@@ -692,13 +692,43 @@ function forLoopIterate2(input) {
 // Person name cannot be blank
 // false
 
-function makePerson(personName, age) {
-    if ((0 < age && age < 150) && personName.length >= 1){
-        return {personName, age};
-    }
-    console.log("input invalid");
-    return false;
+// function makePerson(personName, age) {
+//     if ((0 < age && age < 150) && personName.length >= 1){
+//         return {personName, age};
+//     }
+//     console.log("input invalid");
+//     return false;
+// }
+//
+// console.log(makePerson("will", 24));
+
+function isOdd (x) {
+    x = Math.abs(x)
+    return x % 2 === 1;
 }
 
-console.log(makePerson("will", 24));
+function isOddv2 (x) {
+    return Math.abs(x) % 2 === 1;
+}
 
+function isOddv3 (x) {
+    return (x % 2 === 1) || (x %  2 === -1);
+}
+
+function isOddv4 (x) {
+    return x % 2 !== 0;
+}
+// function isOddv2 (x) {
+//     if (x % 2 === 1) {
+//         return true;
+//     }
+//     else {
+//         return false;
+//     }
+// }
+
+console.log(-3 % 2);
+console.log(isOdd(-3))
+console.log(isOddv2(-3))
+console.log(isOddv3(-1))
+console.log(isOddv4(-3))

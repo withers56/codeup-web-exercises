@@ -147,7 +147,7 @@ function appendWeatherData(data, locationArray) {
     }
 
     function getDate(day) {
-        return new Date(day * 1001);
+        return new Date(day * 1000);
     }
 
     function getSearchedTime (offset) {
