@@ -23,9 +23,9 @@
 // Declare a function called 'isFive' that takes in an input and returns
 // true if that input is the number five. Otherwise it should return false.
 
-function isFive(number) {
-    return number === 5;
-}
+// function isFive(number) {
+//     return number === 5;
+// }
 
 // console.log(isFive(1));
 
@@ -34,9 +34,9 @@ function isFive(number) {
 // Make a function named isMultipleOfThree that takes in an input and returns a
 // boolean indicating whether or not the input is a multiple of three.
 
-function isMultipleOfThree(input) {
-    return input % 3 === 0;
-}
+// function isMultipleOfThree(input) {
+//     return input % 3 === 0;
+// }
 
 //console.log(isMultipleOfThree(27));
 
@@ -702,22 +702,22 @@ function forLoopIterate2(input) {
 //
 // console.log(makePerson("will", 24));
 
-function isOdd (x) {
-    x = Math.abs(x)
-    return x % 2 === 1;
-}
-
-function isOddv2 (x) {
-    return Math.abs(x) % 2 === 1;
-}
-
-function isOddv3 (x) {
-    return (x % 2 === 1) || (x %  2 === -1);
-}
-
-function isOddv4 (x) {
-    return x % 2 !== 0;
-}
+// function isOdd (x) {
+//     x = Math.abs(x)
+//     return x % 2 === 1;
+// }
+//
+// function isOddv2 (x) {
+//     return Math.abs(x) % 2 === 1;
+// }
+//
+// function isOddv3 (x) {
+//     return (x % 2 === 1) || (x %  2 === -1);
+// }
+//
+// function isOddv4 (x) {
+//     return x % 2 !== 0;
+// }
 // function isOddv2 (x) {
 //     if (x % 2 === 1) {
 //         return true;
@@ -727,8 +727,9 @@ function isOddv4 (x) {
 //     }
 // }
 
-console.log(-3 % 2);
-console.log(isOdd(-3))
-console.log(isOddv2(-3))
-console.log(isOddv3(-1))
-console.log(isOddv4(-3))
+// console.log(-3 % 2);
+// console.log(isOdd(-3))
+// console.log(isOddv2(-3))
+// console.log(isOddv3(-1))
+// console.log(isOddv4(-3))
+

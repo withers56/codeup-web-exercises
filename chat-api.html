@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Hello, PubNub</title>
+    <!-- Update this block with the URL to the content delivery network version of the SDK -->
+<!--    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.7.0.0.js"></script>-->
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.7.0.0.min.js"></script>
+</head>
+<body>
+<script>
+
+    let pubnub
+    let channel = 'test'
+
+    initPubNub()
+    subscribingToChannel()
+    pubNubLisitner()
+
+    function initPubNub(){
+       pubnub = new PubNub({
+            publishKey : "pub-c-62bc5d65-2a08-407c-8259-890f93d4222d",
+            subscribeKey : "sub-c-17f4346c-ca4f-11ec-987b-a6fdca316470",
+            uuid: "will"
+        })
+    }
+
+    pubnub.push.addChannels(
+        {
+            channels: ["chats.room1", "chats.room2", "alerts.system"],
+            device: deviceToken,
+            pushGateway: "apns2",
+            environment: "production", // Required for APNs2
+            topic: "com.mycompany.mybundleid" // Required for APNs2
+        },
+        function(status) {
+            console.log(status);
+        }
+    );
+
+    function sendMsg(msg) {
+        var publishPayload = {
+            channel: channel,
+            message: {
+                description: msg
+            }
+        }
+        pubnub.publish(publishPayload, function (status, response) {
+            console.log(status, response);
+        })
+    }
+    function getOldMessages() {
+        pubnub.fetchMessages(
+            {
+                channels: [channel],
+                end: '15343325004275466',
+                count: 100
+            },
+            (status, response) => {
+                console.log(response)
+            }
+        );
+    }
+
+    function subscribingToChannel() {
+        pubnub.subscribe({
+            channels: [channel]
+        })
+    }
+
+    function pubNubLisitner(){
+        pubnub.addListener({
+
+            message: function(msg) {
+                console.log(msg)
+                console.log(msg.publisher + ": " + msg.message.description)
+            }
+        })
+    }
+
+
+
+</script>
+</body>
+</html>

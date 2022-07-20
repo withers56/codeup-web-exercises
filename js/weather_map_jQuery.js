@@ -114,7 +114,7 @@ function appendWeatherData(data, locationArray) {
 
     weatherBox.children().each(function(index) {
         if (index % 2 !== 0) {
-            $(this).css('background-color', 'rgb(179,179,179)');
+            $(this).css('background-color', 'rgba(179,179,179,0.75)');
         }
     });
 

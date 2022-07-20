@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+Enter Chat and press enter
+<div><input id=input placeholder="message" /></div>
+
+Chat Output
+<div id=box></div>
+
+<script src=https://cdn.pubnub.com/sdk/javascript/pubnub.4.28.2.min.js></script>
+<script>  let pubnub = new PubNub({
+    publishKey : "pub-c-62bc5d65-2a08-407c-8259-890f93d4222d",
+    subscribeKey : "sub-c-17f4346c-ca4f-11ec-987b-a6fdca316470",
+    uuid: "bill"
+})
+let channel = 'hello_world'
+
+pubnub.subscribe({
+    channels: [channel]
+})
+
+pubnub.addListener({
+    // status: function(statusEvent) {
+    //     if (statusEvent.category === "PNConnectedCategory") {
+    //         publishSampleMessage();
+    //     }
+    // },
+    message: function(msg) {
+        console.log(msg)
+        console.log(msg.publisher + ": " + msg.message.description)
+    },
+    presence: function(presenceEvent) {
+        // This is where you handle presence. Not important for now :)
+    }
+})
+
+function publishSampleMessage() {
+    console.log("Publish to a channel 'hello_world'");
+
+    // With the right payload, you can publish a message, add a reaction to a message,
+    // send a push notification, or send a small payload called a signal.
+    var publishPayload = {
+        channel : "hello_world",
+        message: {
+            title: "greeting",
+            description: "messaging being sent from william #1"
+        }
+    }
+    pubnub.publish(publishPayload, function(status, response) {
+        console.log(status, response);
+    })
+}
+
+function sendMsg(msg) {
+    var publishPayload = {
+        channel : channel,
+        message: {
+            description: msg
+        }
+    }
+    pubnub.publish(publishPayload)
+}
+</script>
+</body>
+</html>
