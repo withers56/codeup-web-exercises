@@ -33,6 +33,10 @@
         border-bottom: 1px solid black;
     }
 
+    .gold {
+        color: gold;
+    }
+
     #toast-close {
         cursor: pointer;
     }
@@ -44,7 +48,7 @@
 <script>
 
     document.querySelector('.toast-function-btn').addEventListener('click', function (){
-        moreToast('registered!', 'Completed the registration Process!')
+        moreToast('Registered!', 'You have Completed the registration Process!')
     })
 
 
@@ -56,8 +60,9 @@
         //language=html
         toastDiv.innerHTML = `
         <div class="toast-title">
-            <div class="mx-1 my-1">
-                ${title}
+            <div class="mx-1 my-1 d-flex">
+                <i class="bi bi-trophy-fill gold mx-1"></i>
+                <div class="mx-1">${title}</div>
             </div>
             <div class="mx-1 my-1">
                 <i class="bi bi-x-lg" id="toast-close"></i>
