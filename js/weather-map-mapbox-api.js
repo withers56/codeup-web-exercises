@@ -65,7 +65,7 @@ mapboxgeocoder.on('result', function (results){
 });
 
 map.on('click', function (result){
-
+    console.log(result)
     createMarker(result.lngLat.lng, result.lngLat.lat);
 
     let lat = result.lngLat.lat;
